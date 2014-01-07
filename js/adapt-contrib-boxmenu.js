@@ -5,12 +5,6 @@ define(function(require) {
     var MenuView = require('coreViews/menuView');
     
     var BoxMenuView = MenuView.extend({
-
-        preRender: function() {
-            this.$el.css('opacity', 0);
-            this.listenTo(this.model, 'change:_isReady', this.isReady);
-            $('.loading').fadeIn('fast');
-        },
         
         postRender: function() {
             var nthChild = 0;
@@ -21,14 +15,6 @@ define(function(require) {
                 }
             });
 
-        },
-        
-        isReady: function() {
-            _.defer(_.bind(function() {
-                $('.loading').hide();
-                this.$el.animate({'opacity': 1}, 'fast');
-                Adapt.trigger('menuView:ready');
-            }, this));
         }
 
     }, {
