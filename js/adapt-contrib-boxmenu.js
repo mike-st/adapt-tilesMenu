@@ -14,7 +14,6 @@ define(function(require) {
                     this.$('.menu-inner').append(new BoxMenuItemView({model:item, nthChild:nthChild}).$el);
                 }
             });
-
         }
 
     }, {
@@ -24,11 +23,12 @@ define(function(require) {
     var BoxMenuItemView = MenuView.extend({
 
         className: function() {
-            return 'menu-item ' 
-            + 'menu-item-' 
-            + this.model.get('_id') 
-            + " nth-child-" 
-            + this.options.nthChild;;
+            return [
+                'menu-item',
+                'menu-item-' + this.model.get('_id') ,
+                'nth-child-' + this.options.nthChild,
+                this.options.nthChild % 2 === 0  ? 'nth-child-even' : 'nth-child-odd'
+            ].join(' ');
         },
 
         events: {
@@ -36,10 +36,12 @@ define(function(require) {
         },
 
         clickItem: function() {
+            console.log('clicked');
             this.model.set('_isVisited', true);
         },
 
         preRender: function() {
+
         },
 
         postRender: function() {
@@ -53,6 +55,7 @@ define(function(require) {
     });
     
     Adapt.on('router:menu', function(model) {
+        console.log(model);
         $('#wrapper').append(new BoxMenuView({model:model}).$el);
     });
     
