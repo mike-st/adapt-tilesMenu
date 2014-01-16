@@ -36,7 +36,6 @@ define(function(require) {
         },
 
         clickItem: function() {
-            console.log('clicked');
             this.model.set('_isVisited', true);
         },
 
@@ -55,13 +54,7 @@ define(function(require) {
     });
     
     Adapt.on('router:menu', function(model) {
-        console.log(model);
         $('#wrapper').append(new BoxMenuView({model:model}).$el);
     });
-    
-    /*Adapt.on('router:menu', function(id) {
-        var currentModel = Adapt.contentObjects.findWhere({_id:id});
-        new BoxMenuView({model:currentModel});
-    });*/
     
 });
