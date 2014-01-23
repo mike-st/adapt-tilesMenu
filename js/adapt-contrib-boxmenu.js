@@ -31,14 +31,6 @@ define(function(require) {
             ].join(' ');
         },
 
-        events: {
-            'click a':'clickItem'
-        },
-
-        clickItem: function() {
-            this.model.set('_isVisited', true);
-        },
-
         preRender: function() {
 
         },
