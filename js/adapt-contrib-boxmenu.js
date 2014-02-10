@@ -32,7 +32,7 @@ define(function(require) {
         },
 
         preRender: function() {
-
+            this.model.getCompleteComponentsAsPercentage();
         },
 
         postRender: function() {

@@ -14,5 +14,11 @@
 		<a href="#/id/{{_id}}" class="{{#if _isVisited}}visited{{/if}}">
 			{{{linkText}}}
 		</a>
+		<span class="menu-item-duration">Duration: {{{duration}}}</span>
+	</div>
+	<div class="menu-item-progress">
+		<div class="menu-item-progress-indicator">
+			<div class="menu-item-progress-indicator-bar" style="width:{{completedChildrenAsPercentage}}%"></div>
+		</div>
 	</div>
 </div>
