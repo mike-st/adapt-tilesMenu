@@ -46,7 +46,9 @@ define(function(require) {
     });
     
     Adapt.on('router:menu', function(model) {
+
         $('#wrapper').append(new BoxMenuView({model:model}).$el);
+    
     });
     
 });
