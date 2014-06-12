@@ -1,4 +1,4 @@
-<div class="menu-item-inner">
+<div class="menu-item-inner" role="menuitem">
 	<div class="menu-graphic">
 		<a href="#/id/{{_id}}" class="{{#if _isVisited}}visited{{/if}}">
 			<img src="{{_graphic.src}}" alt="{{_graphic.alt}}" />
@@ -10,8 +10,8 @@
 	<div class="menu-item-body">
 		<div class="menu-item-body-inner">{{{body}}}</div>
 	</div>
-	<div class="menu-item-button">
-		<a href="#/id/{{_id}}" class="{{#if _isVisited}}visited{{/if}}" alt="{{{title}}}">
+	<div class="menu-item-button" role="button">
+		<a href="#/id/{{_id}}" class="{{#if _isVisited}}visited{{/if}}" aria-label="{{{title}}}">
 			{{{linkText}}}
 		</a>
 		<span class="menu-item-duration">Duration: {{{duration}}}</span>
