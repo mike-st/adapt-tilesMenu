@@ -32,7 +32,6 @@ define(function(require) {
         },
 
         preRender: function() {
-            //Adapt.course.get('_accessibility')._ariaLabels
             this.model.getCompleteComponentsAsPercentage();
         },
 
