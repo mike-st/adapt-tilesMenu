@@ -1,17 +1,17 @@
-<div class="menu-item-inner" role="menuitem">
+<div class="menu-item-inner" role="menuitem"  aria-label="{{_accessibility._ariaLabels.menuItem}}">
 	<div class="menu-graphic">
 		<a href="#/id/{{_id}}" class="{{#if _isVisited}}visited{{/if}}">
 			<img src="{{_graphic.src}}" alt="{{_graphic.alt}}" />
 		</a>
 	</div>
 	<div class="menu-item-title">
-		<h2 class="menu-item-title-inner">{{{displayTitle}}}</h2>
+		<h2 class="menu-item-title-inner" role="heading">{{{displayTitle}}}</h2>
 	</div>
 	<div class="menu-item-body">
 		<div class="menu-item-body-inner">{{{body}}}</div>
 	</div>
 	<div class="menu-item-button" role="button">
-		<a href="#/id/{{_id}}" class="{{#if _isVisited}}visited{{/if}}" aria-label="{{{title}}}">
+		<a href="#/id/{{_id}}" class="{{#if _isVisited}}visited{{/if}}">
 			{{{linkText}}}
 		</a>
 		<span class="menu-item-duration">Duration: {{{duration}}}</span>
