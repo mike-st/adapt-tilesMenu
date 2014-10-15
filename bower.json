@@ -13,5 +13,5 @@
     "adapt-menu"
   ],
   "license": "GPLv3",
-  "targetAttribute": "_boxmenu"
+  "targetAttribute": "_boxMenu"
 }
