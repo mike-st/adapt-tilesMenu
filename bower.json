@@ -5,18 +5,13 @@
   "authors": [
     "Daryl Hedley <darylhedley@hotmail.com>"
   ],
+  "displayName" : "Box menu",
   "description": "A core bundled menu",
   "main": "js/adapt-contrib-boxmenu.js",
   "keywords": [
     "adapt-plugin",
     "adapt-menu"
   ],
-  "license": "MIT",
-  "ignore": [
-    "**/.*",
-    "node_modules",
-    "bower_components",
-    "test",
-    "tests"
-  ]
+  "license": "GPLv3",
+  "targetAttribute": "_boxMenu"
 }
