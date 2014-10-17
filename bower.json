@@ -5,7 +5,8 @@
   "authors": [
     "Daryl Hedley <darylhedley@hotmail.com>"
   ],
-  "displayName" : "Box menu",
+  "displayName": "Box menu",
+  "menu": "boxmenu",
   "description": "A core bundled menu",
   "main": "js/adapt-contrib-boxmenu.js",
   "keywords": [
