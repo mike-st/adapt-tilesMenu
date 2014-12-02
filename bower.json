@@ -3,7 +3,8 @@
   "version": "0.0.0",
   "homepage": "https://github.com/adaptlearning/adapt-contrib-boxmenu",
   "authors": [
-    "Daryl Hedley <darylhedley@hotmail.com>"
+    "Daryl Hedley <darylhedley@hotmail.com>",
+    "Himanshu Rajotia <himanshu.rajotia@exultcorp.com>"
   ],
   "displayName": "Box menu",
   "menu": "boxmenu",
