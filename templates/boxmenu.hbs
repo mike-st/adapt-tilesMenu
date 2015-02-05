@@ -1,16 +1,16 @@
-<div class="menu-container" role="menu">
+<div class="menu-container" role="region" tabindex="0" aria-label="{{_globals._accessibility._ariaLabels.menu}}">
 	<div class='menu-container-inner box-menu-inner clearfix'>
 		{{#if title}}
 		<div class="menu-title">
-			<h1 class="menu-title-inner" role="heading">
-				{{{title}}}
-			</h1>
+			<div class="menu-title-inner h1" role="heading" aria-level="1">
+				{{{a11y_text title}}}
+			</div>
 		</div>
 		{{/if}}
 		{{#if body}}
 		<div class="menu-body">
 			<div class="menu-body-inner">
-				{{{body}}}
+				{{{a11y_text body}}}
 			</div>
 		</div>
 		{{/if}}
