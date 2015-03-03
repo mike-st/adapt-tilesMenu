@@ -3,7 +3,7 @@
         <img src="{{_graphic.src}}" alt="{{_graphic.alt}}" />
     </div>
     <div class="menu-item-title">
-        <div class="menu-item-title-inner h3" role="heading" aria-level="2">{{{a11y_text displayTitle}}}</div>
+        <div class="menu-item-title-inner h3" role="heading" aria-level="2" tabindex="0">{{{displayTitle}}}</div>
     </div>
     <div class="menu-item-body">
         <div class="menu-item-body-inner">{{{a11y_text body}}}</div>
@@ -13,7 +13,7 @@
             {{{linkText}}}
         </a>
         {{#if duration}}
-            <span class="menu-item-duration">Duration: {{{a11y_text duration}}}</span>
+            <span class="menu-item-duration" role="region" tabindex="0">Duration: {{{duration}}}</span>
         {{/if}}
     </div>
 </div>
