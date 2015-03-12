@@ -15,6 +15,7 @@
             "linkText": "Select here to view."
         },
         "linkText":"View",
+        "durationLabel":"Duration:",
         "duration":"2 mins"
     }
 

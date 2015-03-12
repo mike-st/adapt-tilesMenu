@@ -15,7 +15,7 @@
             {{{linkText}}}
         </a>
         {{#if duration}}
-            <span class="menu-item-duration">Duration: {{{duration}}}</span>
+            <span class="menu-item-duration">{{#if durationLabel}}{{{durationLabel}}}{{else}}Duration:{{/if}} {{{duration}}}</span>
         {{/if}}
     </div>
 </div>
