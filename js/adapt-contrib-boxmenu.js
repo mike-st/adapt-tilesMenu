@@ -36,12 +36,19 @@ define(function(require) {
         },
 
         preRender: function() {
+            this.model.set('_isComplete', this.isCompleted());
         },
 
         postRender: function() {
             this.$el.imageready(_.bind(function() {
                 this.setReadyStatus();
             }, this));
+        },
+
+        isCompleted: function() {
+            return this.model.findDescendants('components').every(function (item) {
+                return item.get('_isComplete');
+            });
         }
 
     }, {
