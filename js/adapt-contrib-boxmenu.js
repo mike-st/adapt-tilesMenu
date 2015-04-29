@@ -46,7 +46,7 @@ define(function(require) {
         },
 
         isCompleted: function() {
-            return this.model.findDescendants('components').every(function (item) {
+            return _.every(this.model.findDescendants('components').models, function (item) {
                 return item.get('_isComplete');
             });
         }
