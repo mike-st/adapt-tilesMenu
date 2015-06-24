@@ -10,14 +10,7 @@
             "alt": "Welcome to Adapt Learning",
             "src": "course/en/images/origami-menu-one.jpg"
         },
-        "_ariaLabels": {
-            "item": "Item label here.",
-            "linkText": "Select here to view."
-        },
         "linkText":"View",
         "durationLabel":"Duration:",
         "duration":"2 mins"
     }
-
-
-    // _ariaLabels are provided to support assistive technologies in user accessibility. 
