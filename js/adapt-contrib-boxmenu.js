@@ -15,7 +15,8 @@ define(function(require) {
             this.model.getChildren().each(function(item) {
                 if (item.get('_isAvailable')) {
                     nthChild++;
-                    this.$('.menu-container-inner').append(new BoxMenuItemView({model: item, nthChild: nthChild}).$el);
+                    item.set("_nthChild", nthChild);
+                    this.$('.menu-container-inner').append(new BoxMenuItemView({model: item}).$el);
                 }
             });
         }
@@ -27,11 +28,12 @@ define(function(require) {
     var BoxMenuItemView = MenuView.extend({
 
         className: function() {
+            var nthChild = this.model.get("_nthChild");
             return [
                 'menu-item',
                 'menu-item-' + this.model.get('_id') ,
-                'nth-child-' + this.options.nthChild,
-                this.options.nthChild % 2 === 0 ? 'nth-child-even' : 'nth-child-odd'
+                'nth-child-' + nthChild,
+                nthChild % 2 === 0 ? 'nth-child-even' : 'nth-child-odd'
             ].join(' ');
         },
 
