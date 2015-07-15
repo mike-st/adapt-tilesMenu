@@ -38,19 +38,14 @@ define(function(require) {
         },
 
         preRender: function() {
-            this.model.set('_isComplete', this.isCompleted());
+            this.model.checkCompletionStatus();
+            this.model.checkInteractionCompletionStatus();
         },
 
         postRender: function() {
             this.$el.imageready(_.bind(function() {
                 this.setReadyStatus();
             }, this));
-        },
-
-        isCompleted: function() {
-            return _.every(this.model.findDescendants('components').models, function (item) {
-                return item.get('_isComplete');
-            });
         }
 
     }, {
