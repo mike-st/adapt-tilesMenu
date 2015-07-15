@@ -8,7 +8,7 @@ First, be sure to install the [Adapt Command Line Interface](https://github.com/
 
 		adapt install adapt-contrib-boxMenu
 
-This extension can also be installed by adding the extension to the adapt.json file before running `adapt install`:
+This menu can also be installed by adding the menu to the adapt.json file before running `adapt install`:
  
         "adapt-contrib-boxMenu": "*"
 
