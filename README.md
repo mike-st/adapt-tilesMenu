@@ -1,8 +1,8 @@
-# adapt-contrib-boxMenu  
+# adapt-contrib-boxmenu  
 
 **Box Menu** is a *menu* bundled with the [Adapt framework](https://github.com/adaptlearning/adapt_framework).  
 
-<img src="https://github.com/adaptlearning/documentation/blob/master/04_wiki_assets/plug-ins/images/boxMenu01.jpg" alt="image of two rectangular menu options produced by box menu">
+<img src="https://github.com/adaptlearning/documentation/blob/master/04_wiki_assets/plug-ins/images/boxmenu01.gif" alt="image of two rectangular menu options produced by box menu">
 
 Menu choices are framed within a box element and arranged in a grid. **Box Menu** allows you to direct the learner to either further menus (sub menus) or to one or more pages of content. The **Box Menu** default is show a title, an image, some body text, duration, a progress indicator and a link button.
 
@@ -14,10 +14,10 @@ As Adapt's *[core menu](https://github.com/adaptlearning/adapt_framework/wiki/Co
 
 * If **Box Menu** has been uninstalled from the Adapt framework, it may be reinstalled.
 With the [Adapt CLI](https://github.com/cajones/adapt-cli) installed, run the following from the command line:  
-`adapt install adapt-contrib-boxMenu`
+`adapt install adapt-contrib-boxmenu`
 
     Alternatively, this component can also be installed by adding the following line of code to the *adapt.json* file:  
-    `"adapt-contrib-boxMenu": "*"`  
+    `"adapt-contrib-boxmenu": "*"`  
     Then running the command:  
     `adapt install`  
     (This second method will reinstall all plug-ins listed in *adapt.json*.)  
@@ -26,13 +26,13 @@ With the [Adapt CLI](https://github.com/cajones/adapt-cli) installed, run the fo
 
 ##Uninstallation  
 The Adapt framework does not allow the installation of more than one menu at a time. In order to replace **Box Menu** it must be uninstalled. With the root of your framework installation as your current working directory, run the following command:  
-`adapt uninstall adapt-contrib-boxMenu`  
+`adapt uninstall adapt-contrib-boxmenu`  
 
 <div float align=right><a href="#top">Back to Top</a></div>  
 
 ## Settings Overview
 
-The attributes listed below are used in *contentObjects.json* to configure **BoxMenu**, and are properly formatted as JSON in [*example.json*](https://github.com/adaptlearning/adapt-contrib-boxMenu/blob/master/example.json). Visit the [**BoxMenu** wiki](https://github.com/adaptlearning/adapt-contrib-boxmenu/wiki) for more information about how they appear in the [authoring tool](https://github.com/adaptlearning/adapt_authoring/wiki). 
+The attributes listed below are used in *contentObjects.json* to configure **BoxMenu**, and are properly formatted as JSON in [*example.json*](https://github.com/adaptlearning/adapt-contrib-boxmenu/blob/master/example.json). Visit the [**BoxMenu** wiki](https://github.com/adaptlearning/adapt-contrib-boxmenu/wiki) for more information about how they appear in the [authoring tool](https://github.com/adaptlearning/adapt_authoring/wiki). 
 
 ### Attributes
 
