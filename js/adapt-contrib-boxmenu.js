@@ -1,8 +1,3 @@
-/*
- * adapt-contrib-boxmenu
- * License - http://github.com/adaptlearning/adapt_framework/blob/master/LICENSE
- * Maintainers - Daryl Hedley <darylhedley@hotmail.com>, Himanshu Rajotia <himanshu.rajotia@exultcorp.com>
- */
 define(function(require) {
 
     var Adapt = require('coreJS/adapt');
