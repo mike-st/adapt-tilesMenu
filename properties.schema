@@ -11,14 +11,14 @@
       "inputType": "Text",
       "validators": []
     },
-    "ariaRegionMenuItem": {
+    "menuItem": {
       "type": "string",
       "required": true,
       "default": "Menu item.",
       "inputType": "Text",
       "validators": []
     },
-    "ariaMenuEndLabel": {
+    "menuEnd": {
       "type": "string",
       "required": true,
       "default": "You have reached the end of the menu.",
