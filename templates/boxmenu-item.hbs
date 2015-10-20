@@ -1,6 +1,8 @@
 <div class="menu-item-inner" aria-label="{{_globals._menu._boxmenu.menuItem}}" {{#if _globals._menu._boxmenu.menuItem}}tabindex="0"{{/if}}>
     <div class="menu-item-graphic">
-        <img src="{{_graphic.src}}" alt="{{_graphic.alt}}" />
+        {{#if _graphic.src}}
+            <img src="{{_graphic.src}}" alt="{{_graphic.alt}}" />
+        {{/if}}
     </div>
     <div class="menu-item-title">
         <div class="menu-item-title-inner h3 accessible-text-block" role="heading" aria-level="2" tabindex="0">{{{displayTitle}}}</div>

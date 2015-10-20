@@ -43,9 +43,14 @@ define([
         },
 
         postRender: function() {
-            this.$el.imageready(_.bind(function() {
+            var graphic = this.model.get('_graphic');
+            if (graphic && graphic.src && graphic.src.length > 0) {
+                this.$el.imageready(_.bind(function() {
+                    this.setReadyStatus();
+                }, this));
+            } else {
                 this.setReadyStatus();
-            }, this));
+            }
         },
 
         onClickMenuItemButton: function(event) {
