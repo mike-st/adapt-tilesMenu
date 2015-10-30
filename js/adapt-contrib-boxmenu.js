@@ -1,7 +1,7 @@
-define(function(require) {
-
-    var Adapt = require('coreJS/adapt');
-    var MenuView = require('coreViews/menuView');
+define([
+    'coreJS/adapt',
+    'coreViews/menuView'
+], function(Adapt, MenuView) {
 
     var BoxMenuView = MenuView.extend({
 
@@ -22,6 +22,10 @@ define(function(require) {
 
     var BoxMenuItemView = MenuView.extend({
 
+        events: {
+            'click button' : 'onClickMenuItemButton'
+        },
+
         className: function() {
             var nthChild = this.model.get("_nthChild");
             return [
@@ -39,9 +43,19 @@ define(function(require) {
         },
 
         postRender: function() {
-            this.$el.imageready(_.bind(function() {
+            var graphic = this.model.get('_graphic');
+            if (graphic && graphic.src && graphic.src.length > 0) {
+                this.$el.imageready(_.bind(function() {
+                    this.setReadyStatus();
+                }, this));
+            } else {
                 this.setReadyStatus();
-            }, this));
+            }
+        },
+
+        onClickMenuItemButton: function(event) {
+            if(event && event.preventDefault) event.preventDefault();
+            Backbone.history.navigate('#/id/' + this.model.get('_id'), {trigger: true});
         }
 
     }, {
