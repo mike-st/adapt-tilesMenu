@@ -11,6 +11,13 @@
       "inputType": "Text",
       "validators": []
     },
+    "durationLabel": {
+      "type": "string",
+      "required": true,
+      "default": "Duration:",
+      "inputType": "Text",
+      "validators": []
+    },
     "menuItem": {
       "type": "string",
       "required": true,
