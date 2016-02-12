@@ -32,6 +32,8 @@ define([
                 'menu-item',
                 'menu-item-' + this.model.get('_id') ,
                 this.model.get('_classes'),
+                this.model.get('_isVisited') ? 'visited' : '',
+                this.model.get('_isComplete') ? 'completed' : '',
                 'nth-child-' + nthChild,
                 nthChild % 2 === 0 ? 'nth-child-even' : 'nth-child-odd'
             ].join(' ');
