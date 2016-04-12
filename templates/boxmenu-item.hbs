@@ -11,7 +11,7 @@
         <div class="menu-item-body-inner">{{{a11y_text body}}}</div>
     </div>
     <div class="menu-item-button">
-        <button role="button" aria-label="{{linkText}} {{#if _isVisited}}{{_globals._accessibility._ariaLabels.visited}}{{/if}}" class="{{#if _isVisited}}visited{{/if}} accessible-text-block">
+        <button aria-label="{{linkText}} {{#if _isVisited}}{{_globals._accessibility._ariaLabels.visited}}{{/if}}" class="{{#if _isVisited}}visited{{/if}} {{#if _isLocked}}disabled{{/if}} accessible-text-block" {{#if _isLocked}}disabled="disabled"{{/if}}>
             {{{linkText}}}
         </button>
         {{#if duration}}
