@@ -9,28 +9,32 @@
       "required": true,
       "default": "Menu",
       "inputType": "Text",
-      "validators": []
+      "validators": [],
+      "translatable": true
     },
     "durationLabel": {
       "type": "string",
       "required": true,
       "default": "Duration:",
       "inputType": "Text",
-      "validators": []
+      "validators": [],
+      "translatable": true
     },
     "menuItem": {
       "type": "string",
       "required": true,
       "default": "Menu item.",
       "inputType": "Text",
-      "validators": []
+      "validators": [],
+      "translatable": true
     },
     "menuEnd": {
       "type": "string",
       "required": true,
       "default": "You have reached the end of the menu.",
       "inputType": "Text",
-      "validators": []
+      "validators": [],
+      "translatable": true
     }
   },
   "properties": {
