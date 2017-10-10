@@ -5,6 +5,10 @@ define([
 
     var BoxMenuView = MenuView.extend({
 
+        className: function() {
+            return MenuView.prototype.className.apply(this) + " boxmenu-menu";
+        },
+
         postRender: function() {
             var nthChild = 0;
             this.model.getChildren().each(function(item) {
