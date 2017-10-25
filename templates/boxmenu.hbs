@@ -4,14 +4,14 @@
 			<div class="menu-header-inner">
 				{{#if displayTitle}}
 				<div class="menu-title">
-					<div class="menu-title-inner h1 accessible-text-block" role="heading" aria-level="1" tabindex="0">
+					<div class="menu-title-inner h1" role="heading" aria-level="1" tabindex="0">
 						{{{compile displayTitle}}}
 					</div>
 				</div>
 				{{/if}}
 				{{#if body}}
 				<div class="menu-body">
-					<div class="menu-body-inner accessible-text-block">
+					<div class="menu-body-inner">
 						{{{compile_a11y_text body}}}
 					</div>
 				</div>
