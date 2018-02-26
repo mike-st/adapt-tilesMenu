@@ -3,6 +3,7 @@
         "_parentId":"course",
         "_type":"page",
         "_classes":"",
+        "_isHiddenFromMenu": false,
         "title":"Welcome to Adapt Learning",
         "displayTitle":"Welcome to Adapt Learning",
         "body":"This page contains a working Adapt page with all core bundled components and plugins working.",
