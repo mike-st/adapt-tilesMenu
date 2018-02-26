@@ -1,6 +1,6 @@
 define([
-    'coreJS/adapt',
-    'coreViews/menuView'
+    'core/js/adapt',
+    'core/js/views/menuView'
 ], function(Adapt, MenuView) {
 
     var BoxMenuView = MenuView.extend({
@@ -9,8 +9,7 @@ define([
             var nthChild = 0;
             this.model.getChildren().each(function(item) {
                 if (item.get('_isAvailable') && !item.get('_hideFromMenu')) {
-                    nthChild++;
-                    item.set("_nthChild", nthChild);
+                    item.set('_nthChild', ++nthChild);
                     this.$('.menu-container-inner').append(new BoxMenuItemView({model: item}).$el);
                 }
 
@@ -31,7 +30,7 @@ define([
         },
 
         className: function() {
-            var nthChild = this.model.get("_nthChild");
+            var nthChild = this.model.get('_nthChild');
             return [
                 'menu-item',
                 'menu-item-' + this.model.get('_id') ,
