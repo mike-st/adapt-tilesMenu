@@ -8,10 +8,14 @@ define([
         postRender: function() {
             var nthChild = 0;
             this.model.getChildren().each(function(item) {
-                if (item.get('_isAvailable')) {
+                if (item.get('_isAvailable') && !item.get('_hideFromMenu')) {
                     nthChild++;
                     item.set("_nthChild", nthChild);
                     this.$('.menu-container-inner').append(new BoxMenuItemView({model: item}).$el);
+                }
+
+                if(item.get('_hideFromMenu')) {
+                    item.set('_isReady', true);
                 }
             });
         }
