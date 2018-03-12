@@ -1,9 +1,4 @@
-.menu-title, .menu-body{
-	color: @inverted-foreground-color;
-	margin-bottom:@menu-title-padding-bottom;
-}
-
-.menu {
+.boxmenu-menu {
 	background: @primary-color;
 	.menu-container {
 		.responsive-large;
@@ -15,14 +10,19 @@
 		padding:@menu-body-padding;
 	}
 
+	.menu-title, .menu-body{
+		color: @inverted-foreground-color;
+		margin-bottom:@menu-title-padding-bottom;
+	}
+
 	.menu-item {
 		.responsive-medium;
 		.responsive-small;
 		width:50%;
 		float:left;
-        .dir-rtl & {
-            float:right;
-        }
+		.dir-rtl & {
+			float:right;
+		}
 		margin-top:@menu-body-padding-bottom;
 		margin-bottom:20px;
 
@@ -30,10 +30,10 @@
 		&.nth-child-even{
 			.menu-item-inner{
 				margin-left:5%;
-		        .dir-rtl & {
-		            margin-left:inherit;
-		            margin-right:5%;
-		        }
+				.dir-rtl & {
+					margin-left:inherit;
+					margin-right:5%;
+				}
 			}
 		}
 
@@ -42,10 +42,10 @@
 			
 			.menu-item-inner {
 				margin-right:5%;
-                .dir-rtl & {
-                    margin-right:inherit;
-                    margin-left:5%;
-                }
+				.dir-rtl & {
+					margin-right:inherit;
+					margin-left:5%;
+				}
 			}
 		}
 	}
@@ -91,27 +91,28 @@
 
 	.menu-item-duration {
 		float:right;
-        .dir-rtl & {
-            float:left;
-        }
+		.dir-rtl & {
+			float:left;
+		}
 	}
 }
 
 
 
 @media all and (max-width:@device-width-medium) {
-	.menu-title-inner{
-		padding:15px 0 0;
-	}
 
-	.menu-body-inner{
-		padding:0px 0 10px;
-	}
+	.boxmenu-menu {
 
-   	.menu{
-
-   		.menu-inner {
+		.menu-inner {
 			padding:0;
+		}
+
+		.menu-title-inner{
+			padding:15px 0 0;
+		}
+
+		.menu-body-inner{
+			padding:0px 0 10px;
 		}
 
 		.menu-item{
@@ -125,5 +126,5 @@
 				}
 			}
 		}
-   	}
+	}
 }
