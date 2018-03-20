@@ -8,12 +8,12 @@ define([
         postRender: function() {
             var nthChild = 0;
             this.model.getChildren().each(function(item) {
-                if (item.get('_isAvailable') && !item.get('_isHiddenFromMenu')) {
+                if (item.get('_isAvailable') && !item.get('_isHidden')) {
                     item.set('_nthChild', ++nthChild);
                     this.$('.menu-container-inner').append(new BoxMenuItemView({model: item}).$el);
                 }
 
-                if(item.get('_isHiddenFromMenu')) {
+                if(item.get('_isHidden')) {
                     item.set('_isReady', true);
                 }
             });

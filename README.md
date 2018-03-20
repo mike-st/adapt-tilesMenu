@@ -44,7 +44,7 @@ The attributes listed below are used in *contentObjects.json* to configure **Box
 
 **_classes** (string): CSS class name to be applied to menu item's `page` element (*src/core/js/views/pageView.js*). The class must be predefined in one of the Less files. Separate multiple classes with a space.
 
-**_isHiddenFromMenu** (boolean): If you want to hide a content object from the menu, set this to `true`. This can be useful if, for example, you have a content object defined as a 'start page' for the course which you therefore don't want to be listed on the menu since the user will have already seen it.
+**_isHidden** (boolean): If you want to hide a content object from the menu, set this to `true`. This can be useful if, for example, you have a content object defined as a 'start page' for the course which you therefore don't want to be listed on the menu since the user will have already seen it.
 
 **title** (string): This text is a reference title for the content object.
 
