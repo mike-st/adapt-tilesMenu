@@ -1,23 +1,42 @@
-<div class="menu-container" role="region" aria-label="{{_globals._menu._boxmenu.ariaRegion}}">
-	<div class='menu-container-inner box-menu-inner clearfix'>
-		<div class="menu-header">
-			<div class="menu-header-inner">
-				{{#if displayTitle}}
-				<div class="menu-title">
-					<div class="menu-title-inner h1" role="heading" aria-level="1" tabindex="0">
-						{{{compile displayTitle}}}
-					</div>
-				</div>
-				{{/if}}
-				{{#if body}}
-				<div class="menu-body">
-					<div class="menu-body-inner">
-						{{{compile_a11y_text body}}}
-					</div>
-				</div>
-				{{/if}}
-			</div>
-		</div>
-	</div>
-	<div class="aria-label relative a11y-ignore-focus prevent-default" tabindex="0" role="region">{{_globals._menu._boxmenu.menuEnd}}</div>
+<div class="m-boxmenu__inner">
+  {{{a11y_aria_label _globals._menu._boxmenu.ariaRegion}}}
+
+  <div class="m-boxmenu__header">
+    <div class="m-boxmenu__header-inner">
+
+      {{#if displayTitle}}
+      <div class="m-boxmenu__title">
+        <div class="m-boxmenu__title-inner" {{{a11y_attrs_heading "menu"}}}>
+          {{{compile displayTitle}}}
+        </div>
+      </div>
+      {{/if}}
+
+      {{#if body}}
+      <div class="m-boxmenu__body">
+        <div class="m-boxmenu__body-inner">
+          {{{compile_a11y_text body}}}
+        </div>
+      </div>
+      {{/if}}
+
+      {{#if instruction}}
+      <div class="m-boxmenu__instruction">
+        <div class="m-boxmenu__instruction-inner">
+          {{{compile_a11y_text instruction}}}
+        </div>
+      </div>
+      {{/if}}
+
+    </div>
+  </div>
+
+  <div class="m-boxmenu__item-container">
+    <div class="m-boxmenu__item-container-inner">
+      {{!-- Menu items render here --}}
+    </div>
+  </div>
+
+  {{{a11y_aria_label_relative _globals._menu._boxmenu.menuEnd}}}
+
 </div>

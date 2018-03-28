@@ -1,21 +1,54 @@
-<div class="menu-item-inner" aria-label="{{_globals._menu._boxmenu.menuItem}}" {{#if _globals._menu._boxmenu.menuItem}}tabindex="0"{{/if}}>
-    <div class="menu-item-graphic">
-        {{#if _graphic.src}}
-            <img src="{{_graphic.src}}" alt="{{_graphic.alt}}" />
-        {{/if}}
+<div class="m-boxmenu__item-inner">
+  {{{a11y_aria_label _globals._menu._boxmenu.menuItem}}}
+
+  {{#if _graphic.src}}
+  <div class="m-boxmenu__item-graphic">
+
+    {{#if _graphic.alt}}
+    <img class="m-boxmenu__item-graphic-inner" src="{{_graphic.src}}" aria-label="{{_graphic.alt}}" tabindex="0">
+    {{else}}
+    <img class="m-boxmenu__item-graphic-inner a11y-ignore" src="{{_graphic.src}}" aria-hidden="true" tabindex="-1">
+    {{/if}}
+
+  </div>
+  {{/if}}
+
+  <div class="m-boxmenu__item-details">
+    <div class="m-boxmenu__item-details-inner">
+
+      {{#if displayTitle}}
+      <div class="m-boxmenu__item-title">
+        <div class="m-boxmenu__item-title-inner" {{{a11y_attrs_heading "menuItem"}}}>
+          {{{compile displayTitle}}}
+        </div>
+      </div>
+      {{/if}}
+
+      {{#if body}}
+      <div class="m-boxmenu__item-body">
+        <div class="m-boxmenu__item-body-inner">
+          {{{compile_a11y_text body}}}
+        </div>
+      </div>
+      {{/if}}
+
+      {{#if duration}}
+      <div class="m-boxmenu__item-duration">
+        <div class="m-boxmenu__item-duration-inner">
+          {{#if _globals._menu._boxmenu.durationLabel}}{{{_globals._menu._boxmenu.durationLabel}}}{{/if}} {{{duration}}}
+        </div>
+      </div>
+      {{/if}}
+
+      <div class="m-boxmenu__item-progress js-menu-progress">
+        {{!-- Menu item progress bar will render in here --}}
+      </div>
+
+      <button class="m-boxmenu__item-button js-menu-btn-view{{#if _isVisited}} --is-visited{{/if}}{{#if _isLocked}} --is-locked{{/if}}"{{#if _isLocked}} disabled="disabled"{{/if}} aria-label="{{linkText}}{{#if _isVisited}}, {{_globals._accessibility._ariaLabels.visited}}{{/if}}">
+        {{{linkText}}}
+      </button>
+
     </div>
-    <div class="menu-item-title">
-        <div class="menu-item-title-inner h3" role="heading" aria-level="2" tabindex="0">{{{compile displayTitle}}}</div>
-    </div>
-    <div class="menu-item-body">
-        <div class="menu-item-body-inner">{{{compile_a11y_text body}}}</div>
-    </div>
-    <div class="menu-item-button">
-        <button aria-label="{{linkText}} {{#if _isVisited}}{{_globals._accessibility._ariaLabels.visited}}{{/if}}" class="{{#if _isVisited}}visited{{/if}} {{#if _isLocked}}disabled{{/if}}" {{#if _isLocked}}disabled="disabled"{{/if}}>
-            {{{linkText}}}
-        </button>
-        {{#if duration}}
-            <span class="menu-item-duration" role="region" tabindex="0">{{#if _globals._menu._boxmenu.durationLabel}}{{{_globals._menu._boxmenu.durationLabel}}}{{/if}} {{{duration}}}</span>
-        {{/if}}
-    </div>
+  </div>
+
 </div>

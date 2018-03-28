@@ -1,0 +1,53 @@
+// html = 16px
+// 87.5em = 1400px
+// 56.25em = 900px
+// 47.5em = 760px
+// 32.5em = 520px
+
+.m-boxmenu {
+  margin: auto;
+  // 1400px
+  max-width: @max-width;
+  padding: 0.5em;
+
+  &__item-container {
+    font-size: 0;
+  }
+
+  &__item-container-inner {
+    font-size: 1rem;
+  }
+
+  &__item {
+    display: inline-block;
+    padding: 1%;
+    width: 50%;
+    vertical-align: top;
+
+    // 760px
+    @media (max-width: @device-width-medium) {
+      padding: 1% 0;
+      width: 100%;
+    }
+  }
+
+  &__item-details {
+    padding: 0.75em;
+  }
+
+  &__item-title {
+    font-size: 1.5em;
+  }
+
+  &__item-body {
+    margin-top: 0.75em;
+  }
+
+  &__item-duration {
+    margin-top: 0.75em;
+  }
+
+  &__item-button {
+    margin-top: 0.75em;
+  }
+}
