@@ -54,13 +54,12 @@ define([
 
         postRender: function() {
             var graphic = this.model.get('_graphic');
-            if (graphic && graphic.src && graphic.src.length > 0) {
-                this.$el.imageready(_.bind(function() {
-                    this.setReadyStatus();
-                }, this));
-            } else {
-                this.setReadyStatus();
+            if (graphic && graphic.src) {
+                this.$el.imageready(this.setReadyStatus.bind(this));
+                return;
             }
+            
+            this.setReadyStatus();
         },
 
         onClickMenuItemButton: function(event) {
