@@ -59,13 +59,13 @@ The attributes listed below are used in *contentObjects.json* to configure **Box
 >**alt** (string): This text becomes the image’s `alt` attribute.
 
 >**src** (string): File name (including path) of the image. Path should be relative to the *src* folder (e.g., *"course/en/images/t05.jpg"*).  
-       
+
 **linkText** (string): This text is displayed on the menu item's link/button.  
 
 **durationLabel** (string): Optional text which precedes **duration** (e.g., `"Duration:"`).  
 
 **duration** (string): Optional text which follows **durationLabel** (e.g., `"2 mins"`).  
-       
+
 <div float align=right><a href="#top">Back to Top</a></div>  
 
 ### Accessibility
@@ -82,4 +82,4 @@ No known limitations.
 **Author / maintainer:** Adapt Core Team with [contributors](https://github.com/adaptlearning/adapt-contrib-boxmenu/graphs/contributors)  
 **Accessibility support:** WAI AA   
 **RTL support:** yes  
-**Cross-platform coverage:** Chrome, Chrome for Android, Firefox (ESR + latest version), Edge, IE11, IE10, IE9, IE8, IE Mobile 11, Safari 10+11 for macOS+iOS, Opera 
+**Cross-platform coverage:** Chrome, Chrome for Android, Firefox (ESR + latest version), Edge, IE11, IE10, IE9, IE Mobile 11, Safari 10+11 for macOS+iOS, Opera 
