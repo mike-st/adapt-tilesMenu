@@ -58,7 +58,7 @@ define([
                 this.$el.imageready(this.setReadyStatus.bind(this));
                 return;
             }
-            
+
             this.setReadyStatus();
         },
 
