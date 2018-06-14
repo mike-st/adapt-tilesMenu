@@ -2,12 +2,12 @@
   {{{a11y_aria_label _globals._menu._boxmenu.menuItem}}}
 
   {{#if _graphic.src}}
-  <div class="m-boxmenu__item-graphic">
+  <div class="m-boxmenu__item-image-container">
 
     {{#if _graphic.alt}}
-    <img class="m-boxmenu__item-graphic-inner" src="{{_graphic.src}}" aria-label="{{_graphic.alt}}" tabindex="0">
+    <img class="m-boxmenu__item-image" src="{{_graphic.src}}" aria-label="{{_graphic.alt}}" tabindex="0">
     {{else}}
-    <img class="m-boxmenu__item-graphic-inner a11y-ignore" src="{{_graphic.src}}" aria-hidden="true" tabindex="-1">
+    <img class="m-boxmenu__item-image a11y-ignore" src="{{_graphic.src}}" aria-hidden="true" tabindex="-1">
     {{/if}}
 
   </div>
@@ -44,7 +44,7 @@
         {{!-- Menu item progress bar will render in here --}}
       </div>
 
-      <button class="m-boxmenu__item-button js-menu-btn-view{{#if _isVisited}} --is-visited{{/if}}{{#if _isLocked}} --is-locked{{/if}}"{{#if _isLocked}} disabled="disabled"{{/if}} aria-label="{{linkText}}{{#if _isVisited}}, {{_globals._accessibility._ariaLabels.visited}}{{/if}}">
+      <button class="m-boxmenu__item-button js-menu-btn-view{{#if _isVisited}} is-visited{{/if}}{{#if _isLocked}} is-locked{{/if}}"{{#if _isLocked}} disabled="disabled"{{/if}} aria-label="{{linkText}}{{#if _isVisited}}, {{_globals._accessibility._ariaLabels.visited}}{{/if}}">
         {{{linkText}}}
       </button>
 
