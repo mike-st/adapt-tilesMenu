@@ -6,7 +6,6 @@
 
 .m-boxmenu {
   margin: auto;
-  // 1400px
   max-width: @max-width;
   padding: 0.5em;
 
@@ -24,8 +23,8 @@
     width: 50%;
     vertical-align: top;
 
-    // 760px
-    @media (max-width: @device-width-medium) {
+    // Applies 760px and below
+    html:not(.size-large) & {
       padding: 1% 0;
       width: 100%;
     }
