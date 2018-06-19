@@ -6,7 +6,7 @@ define([
   var BoxMenuItemView = MenuView.extend({
 
     events: {
-      'click .js-menu-btn-view' : 'onClickMenuItemButton'
+      'click .js-btn-navigate' : 'onClickMenuItemButton'
     },
 
     className: function() {

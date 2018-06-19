@@ -4,8 +4,8 @@
   "framework": ">=2.1",
   "homepage": "https://github.com/adaptlearning/adapt-contrib-boxMenu",
   "issues": "https://github.com/adaptlearning/adapt_framework/issues/new",
-  "displayName": "Box menu",
-  "menu": "boxmenu",
+  "displayName": "Box Menu",
+  "menu": "boxMenu",
   "description": "A core bundled menu",
   "main": "js/adapt-contrib-boxMenu.js",
   "keywords": [
