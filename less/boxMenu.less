@@ -17,8 +17,7 @@
     width: 50%;
     vertical-align: top;
 
-    // Applies 760px and below
-    html:not(.size-large) & {
+    @media (max-width: @device-width-medium) {
       padding: 1% 0;
       width: 100%;
     }
