@@ -1,28 +1,28 @@
-<div class="m-boxmenu__inner">
+<div class="m-box-menu__inner">
   {{{a11y_aria_label _globals._menu._boxmenu.ariaRegion}}}
 
-  <div class="m-boxmenu__header">
-    <div class="m-boxmenu__header-inner">
+  <div class="m-box-menu__header">
+    <div class="m-box-menu__header-inner">
 
       {{#if displayTitle}}
-      <div class="m-boxmenu__title">
-        <div class="m-boxmenu__title-inner" {{{a11y_attrs_heading "menu"}}}>
+      <div class="m-box-menu__title">
+        <div class="m-box-menu__title-inner" {{{a11y_attrs_heading "menu"}}}>
           {{{compile displayTitle}}}
         </div>
       </div>
       {{/if}}
 
       {{#if body}}
-      <div class="m-boxmenu__body">
-        <div class="m-boxmenu__body-inner">
+      <div class="m-box-menu__body">
+        <div class="m-box-menu__body-inner">
           {{{compile_a11y_text body}}}
         </div>
       </div>
       {{/if}}
 
       {{#if instruction}}
-      <div class="m-boxmenu__instruction">
-        <div class="m-boxmenu__instruction-inner">
+      <div class="m-box-menu__instruction">
+        <div class="m-box-menu__instruction-inner">
           {{{compile_a11y_text instruction}}}
         </div>
       </div>
@@ -31,8 +31,8 @@
     </div>
   </div>
 
-  <div class="m-boxmenu__item-container">
-    <div class="m-boxmenu__item-container-inner">
+  <div class="m-box-menu__item-container">
+    <div class="m-box-menu__item-container-inner">
       {{!-- Menu items render here --}}
     </div>
   </div>

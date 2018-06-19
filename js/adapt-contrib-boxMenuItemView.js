@@ -12,8 +12,8 @@ define([
     className: function() {
       var nthChild = this.model.get('_nthChild');
       return [
-        'm-boxmenu__item',
-        'm-boxmenu__item-' + this.model.get('_id') ,
+        'm-box-menu__item',
+        'm-box-menu__item-' + this.model.get('_id') ,
         this.model.get('_classes'),
         this.model.get('_isVisited') ? 'is-visited' : '',
         this.model.get('_isComplete') ? 'is-completed' : '',
@@ -41,7 +41,7 @@ define([
     }
 
   }, {
-    template: 'boxmenu-item'
+    template: 'boxMenuItem'
   });
 
   return BoxMenuItemView;

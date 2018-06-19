@@ -7,7 +7,7 @@ define([
   var BoxMenuView = MenuView.extend({
 
     className: function() {
-      return MenuView.prototype.className.apply(this) + " m-boxmenu";
+      return MenuView.prototype.className.apply(this) + " m-box-menu";
     },
 
     postRender: function() {
@@ -16,7 +16,7 @@ define([
       this.model.getChildren().each(function(item) {
         if (item.get('_isAvailable') && !item.get('_isHidden')) {
           item.set('_nthChild', ++nthChild);
-          this.$('.m-boxmenu__item-container-inner').append(new BoxMenuItemView({model: item}).$el);
+          this.$('.m-box-menu__item-container-inner').append(new BoxMenuItemView({model: item}).$el);
         }
 
         if(item.get('_isHidden')) {
@@ -26,7 +26,7 @@ define([
     }
 
   }, {
-    template: 'boxmenu'
+    template: 'boxMenu'
   });
 
   Adapt.on('router:menu', function(model) {
