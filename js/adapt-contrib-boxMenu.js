@@ -30,7 +30,7 @@ define([
   });
 
   Adapt.on('router:menu', function(model) {
-    $('.location-menu').append(new BoxMenuView({model: model}).$el);
+    $('#wrapper').append(new BoxMenuView({model: model}).$el);
   });
 
 });
