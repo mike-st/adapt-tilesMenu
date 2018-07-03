@@ -18,8 +18,8 @@ define([
         this.model.get('_isVisited') ? 'is-visited' : '',
         this.model.get('_isComplete') ? 'is-completed' : '',
         this.model.get('_isLocked') ? 'is-locked' : '',
-        'nth-child-' + nthChild,
-        nthChild % 2 === 0 ? 'nth-child-even' : 'nth-child-odd'
+        'is-nth-child-' + nthChild,
+        nthChild % 2 === 0 ? 'is-nth-child-even' : 'is-nth-child-odd'
       ].join(' ');
     },
 
