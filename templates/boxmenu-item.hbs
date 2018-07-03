@@ -17,7 +17,7 @@
         {{#if duration}}
             <span class="menu-item-duration">{{#if _globals._menu._boxmenu.durationLabel}}{{{_globals._menu._boxmenu.durationLabel}}}{{/if}} {{{duration}}}</span>
         {{/if}}
-        <div class="js-progress"></div>
+        <div class="js-menu-item-progress"></div>
         <button aria-label="{{#if _isVisited}}{{_globals._accessibility._ariaLabels.visited}}{{/if}} {{linkText}}" class="{{#if _isVisited}}visited{{/if}} {{#if _isLocked}}disabled{{/if}}" {{#if _isLocked}}disabled="disabled"{{/if}}>
             {{{linkText}}}
         </button>
