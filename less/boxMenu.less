@@ -4,27 +4,27 @@
   padding: 0.5em;
 
   &__item-container {
-    font-size: 0;
+    margin: auto;
+    max-width: @device-width-large;
   }
 
   &__item-container-inner {
-    font-size: 1rem;
+    display: flex;
+    flex-wrap: wrap;
   }
 
   &__item {
-    display: inline-block;
-    padding: 1%;
-    width: 50%;
-    vertical-align: top;
+    padding: 1% 0;
+    width: 100%;
 
-    @media (max-width: @device-width-medium) {
-      padding: 1% 0;
-      width: 100%;
+    @media (min-width: @device-width-medium) {
+      padding: 1%;
+      width: 50%;
     }
   }
 
   &__item-details {
-    padding: 0.75em;
+    padding: 1em;
   }
 
   &__item-title {
@@ -32,14 +32,14 @@
   }
 
   &__item-body {
-    margin-top: 0.75em;
+    margin-top: 1em;
   }
 
   &__item-duration {
-    margin-top: 0.75em;
+    margin-top: 1em;
   }
 
   &__item-button {
-    margin-top: 0.75em;
+    margin-top: 1em;
   }
 }
