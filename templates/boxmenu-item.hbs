@@ -1,12 +1,13 @@
 <div class="menu-item-inner" aria-label="{{_globals._menu._boxmenu.menuItem}}" {{#if _globals._menu._boxmenu.menuItem}}tabindex="0"{{/if}}>
     <div class="menu-item-graphic">
         {{#if _graphic.src}}
-            <img src="{{_graphic.src}}" alt="{{_graphic.alt}}" />
+            <img src="{{_graphic.src}}" aria-hidden="true" />
         {{/if}}
     </div>
     <div class="menu-item-title">
         <div class="menu-item-title-inner h3" role="heading" aria-level="2" tabindex="0">{{{compile displayTitle}}}</div>
     </div>
+    {{a11y_aria_image _graphic.alt}}
     <div class="menu-item-body">
         <div class="menu-item-body-inner">{{{compile_a11y_text body}}}</div>
     </div>
