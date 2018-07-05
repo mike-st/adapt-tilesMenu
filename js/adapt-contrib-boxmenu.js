@@ -42,11 +42,10 @@ define([
         },
 
         attributes: function() {
-            return {
-                'data-adapt-id': this.model.get('_id'),
+            return MenuView.prototype.resultExtend('attributes', {
                 'role': 'listitem',
                 'aria-labelledby': this.model.get('_id') + '-heading'
-            };
+            }, this);
         },
 
         className: function() {
