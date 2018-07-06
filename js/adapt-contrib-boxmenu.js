@@ -10,11 +10,10 @@ define([
         },
 
         attributes: function() {
-            return {
+            return MenuView.prototype.resultExtend('attributes', {
                 'role': 'main',
-                'aria-labelledby': this.model.get('_id')+'-heading',
-                'data-adapt-id': this.model.get('_id')
-            };
+                'aria-labelledby': this.model.get('_id')+'-heading'
+            }, this);
         },
 
         postRender: function() {
