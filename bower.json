@@ -1,17 +1,16 @@
 {
-  "name": "adapt-contrib-boxMenu",
-  "version": "3.0.0",
+  "name": "adapt-tilesMenu",
+  "version": "3.0.2",
   "framework": ">=2.1",
-  "homepage": "https://github.com/adaptlearning/adapt-contrib-boxmenu",
-  "issues": "https://github.com/adaptlearning/adapt_framework/issues/new",
-  "displayName": "Box menu",
-  "menu": "boxmenu",
-  "description": "A core bundled menu",
-  "main": "js/adapt-contrib-boxmenu.js",
+  "homepage": "https://github.com/mike-st/adapt-tilesmenu",
+  "displayName": "Scrolling Tiles Menu",
+  "menu": "tilesmenu",
+  "description": "A menu with tiles that scroll vertically.",
+  "main": "js/adapt-tilesmenu.js",
   "keywords": [
     "adapt-plugin",
     "adapt-menu"
   ],
   "license": "GPLv3",
-  "targetAttribute": "_boxMenu"
+  "targetAttribute": "_tilesMenu"
 }

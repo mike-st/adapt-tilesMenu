@@ -46,7 +46,7 @@
           "type":"object"
         },
         "course": {
-          "type":"object"
+          "type": "object"
         },
         "contentobject": {
           "type":"object"

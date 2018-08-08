@@ -1,4 +1,4 @@
-# adapt-contrib-boxmenu  
+# adapt-tilesmenu  
 
 **Box Menu** is a *menu* bundled with the [Adapt framework](https://github.com/adaptlearning/adapt_framework).  
 
@@ -6,7 +6,7 @@
 
 Menu choices are framed within a box element and arranged in a grid. **Box Menu** allows you to direct the learner to either further menus (sub menus) or to one or more pages of content. The **Box Menu** default is show a title, an image, some body text, duration, a progress indicator and a link button.
 
-[Visit the **Box Menu** wiki](https://github.com/adaptlearning/adapt-contrib-boxmenu/wiki) for more information about its functionality and for explanations of key properties. Options include an estimated time for completion (duration) and a progress bar to indicate the percentage of components that have been completed.
+[Visit the **Box Menu** wiki](https://github.com/adaptlearning/adapt-tilesmenu/wiki) for more information about its functionality and for explanations of key properties. Options include an estimated time for completion (duration) and a progress bar to indicate the percentage of components that have been completed.
 
 ## Installation
 
@@ -14,10 +14,10 @@ As Adapt's *[core menu](https://github.com/adaptlearning/adapt_framework/wiki/Co
 
 * If **Box Menu** has been uninstalled from the Adapt framework, it may be reinstalled.
 With the [Adapt CLI](https://github.com/adaptlearning/adapt-cli) installed, run the following from the command line:  
-`adapt install adapt-contrib-boxmenu`
+`adapt install adapt-tilesmenu`
 
     Alternatively, this component can also be installed by adding the following line of code to the *adapt.json* file:  
-    `"adapt-contrib-boxmenu": "*"`  
+    `"adapt-tilesmenu": "*"`  
     Then running the command:  
     `adapt install`  
     (This second method will reinstall all plug-ins listed in *adapt.json*.)  
@@ -26,13 +26,13 @@ With the [Adapt CLI](https://github.com/adaptlearning/adapt-cli) installed, run 
 
 ## Uninstallation  
 The Adapt framework does not allow the installation of more than one menu at a time. In order to replace **Box Menu** it must be uninstalled. With the root of your framework installation as your current working directory, run the following command:  
-`adapt uninstall adapt-contrib-boxmenu`  
+`adapt uninstall adapt-tilesmenu`  
 
 <div float align=right><a href="#top">Back to Top</a></div>  
 
 ## Settings Overview
 
-The attributes listed below are used in *contentObjects.json* to configure **Box Menu**, and are properly formatted as JSON in [*example.json*](https://github.com/adaptlearning/adapt-contrib-boxmenu/blob/master/example.json). Visit the [**Box Menu** wiki](https://github.com/adaptlearning/adapt-contrib-boxmenu/wiki) for more information about how they appear in the [authoring tool](https://github.com/adaptlearning/adapt_authoring/wiki). 
+The attributes listed below are used in *contentObjects.json* to configure **Box Menu**, and are properly formatted as JSON in [*example.json*](https://github.com/adaptlearning/adapt-tilesmenu/blob/master/example.json). Visit the [**Box Menu** wiki](https://github.com/adaptlearning/adapt-tilesmenu/wiki) for more information about how they appear in the [authoring tool](https://github.com/adaptlearning/adapt_authoring/wiki). 
 
 ### Attributes
 
@@ -69,7 +69,7 @@ The attributes listed below are used in *contentObjects.json* to configure **Box
 <div float align=right><a href="#top">Back to Top</a></div>  
 
 ### Accessibility
-Several menu-related elements are assigned a label using the [aria-label](https://github.com/adaptlearning/adapt_framework/wiki/Aria-Labels) attribute: **ariaRegion**, **menuItem**, and **menuEnd**. These labels are not visible elements. They are utilized by assistive technology such as screen readers. Should the label texts need to be customised, they can be found within the **globals** object in [*properties.schema*](https://github.com/adaptlearning/adapt-contrib-boxmenu/blob/master/properties.schema).   
+Several menu-related elements are assigned a label using the [aria-label](https://github.com/adaptlearning/adapt_framework/wiki/Aria-Labels) attribute: **ariaRegion**, **menuItem**, and **menuEnd**. These labels are not visible elements. They are utilized by assistive technology such as screen readers. Should the label texts need to be customised, they can be found within the **globals** object in [*properties.schema*](https://github.com/adaptlearning/adapt-tilesmenu/blob/master/properties.schema).   
 <div float align=right><a href="#top">Back to Top</a></div>
 
 ## Limitations
@@ -79,7 +79,7 @@ No known limitations.
 ----------------------------
 **Version number:**  3.0.0   <a href="https://community.adaptlearning.org/" target="_blank"><img src="https://github.com/adaptlearning/documentation/blob/master/04_wiki_assets/plug-ins/images/adapt-logo-mrgn-lft.jpg" alt="adapt learning logo" align="right"></a> 
 **Framework versions:**  2.1+     
-**Author / maintainer:** Adapt Core Team with [contributors](https://github.com/adaptlearning/adapt-contrib-boxmenu/graphs/contributors)  
+**Author / maintainer:** Adapt Core Team with [contributors](https://github.com/adaptlearning/adapt-tilesmenu/graphs/contributors)  
 **Accessibility support:** WAI AA   
 **RTL support:** yes  
 **Cross-platform coverage:** Chrome, Chrome for Android, Firefox (ESR + latest version), Edge, IE11, IE Mobile 11, Safari 10+11 for macOS+iOS, Opera 

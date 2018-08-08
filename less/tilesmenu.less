@@ -1,0 +1,329 @@
+/* POSITIONING OF NAV ICONS */
+.location-menu .navigation {
+    background-color: transparent;
+    box-shadow: none;
+    border-bottom: none;
+}
+.location-menu .devtools-navigation-drawer-toggle-button {
+    right: inherit !important;
+    top: -2px !important;
+    left: 110px;
+}
+.location-menu .navigation-back-button {
+    right: inherit !important;
+    top: -2px !important;
+    left: 0px !important;
+}
+.location-menu .navigation-drawer-toggle-button {
+    right: 67% !important;
+}
+.location-menu .drawer .drawer-holder {
+    padding-top: 0px;
+}
+.location-menu .drawer .drawer-toolbar {
+    top: 0px;
+    left: 0px;
+}
+
+/* Tile Menu Styles */
+.tilesmenu-menu {
+	background: @primary-color;
+	.menu-container {
+		.responsive-large;
+		.responsive-medium;
+		.responsive-small;
+	}
+
+	.menu-container-inner {
+		padding:@menu-body-padding;
+
+		.menu-header {
+			display: inline-block;
+		    position: fixed;
+		    width: 33%;
+		    height: 100%;
+		    vertical-align: top;
+		    left: 0px;
+		    top: 0px;
+		    -webkit-box-shadow: 0 0 50px 0 rgba(0,0,0,0.5);
+    		-moz-box-shadow: 0 0 50px 0 rgba(0,0,0,0.5);
+    		box-shadow: 0 0 50px 0 rgba(0,0,0,0.5);
+    		z-index: 498;
+
+		    .menu-header-inner {
+		    	padding: 10%;
+			    height: 100%;
+			    text-align: left;
+			    text-shadow: none !important;
+			    background-color: @inverted-foreground-color !important;
+
+			    .menu-title {
+					height: auto;
+				    overflow: hidden;
+				    position: absolute;
+				    bottom: 44vh;
+				    width: 80%;
+				    font-size: 30px !important;
+				    line-height: 36px !important;
+    				padding-bottom: 5px;
+    				color: @foreground-color !important;
+    				margin-bottom:@menu-title-padding-bottom;
+				}
+
+			    .menu-body {
+			    	height: 43vh;
+				    overflow-x: hidden;
+				    overflow-y: auto;
+				    position: absolute;
+				    bottom: 0px;
+				    width: 80%;
+				    color: @foreground-color !important;
+				    margin-bottom:@menu-title-padding-bottom;
+
+			    	.menu-body-inner {
+				    	line-height: 150%;
+					}
+				}
+		    }
+		}
+
+		.menu-tile-items {
+		    display: inline-block;
+		    position: absolute;
+		    width: 67%;
+		    vertical-align: top;
+		    right: 0px;
+		    top: 0px;
+		    height: auto;
+		    overflow-x: hidden;
+		}
+	}
+
+	.menu-item {
+		.responsive-medium;
+		.responsive-small;
+		width:50%;
+		height: 50vh;
+		display: inline-block;
+		float:none;
+		.dir-rtl & {
+			float:none;
+		}
+		margin-top:@menu-body-padding-bottom;
+		vertical-align: top;
+		margin-bottom:0px !important;
+
+
+		&.nth-child-even{
+			.menu-item-inner{
+				margin-left:0px !important;
+				.dir-rtl & {
+					margin-left:inherit;
+					margin-right:0px !important;
+				}
+			}
+		}
+
+		&.nth-child-odd {
+			clear: both;
+			
+			.menu-item-inner {
+				margin-right:0px !important;
+				.dir-rtl & {
+					margin-right:inherit;
+					margin-left:0px !important;
+				}
+			}
+		}
+	}
+
+	.menu-item-inner {
+		background: @background-color;
+		padding-bottom:20px;
+		position:relative;
+		max-width: 100% !important;
+    	margin: 0px !important;
+    	padding: 0px !important;
+
+		.page-level-progress-menu-item-indicator {
+		    border: none;
+		    border-radius: 0px;
+		    width: 50px;
+
+		    .page-level-progress-menu-item-indicator-bar {
+		    	border-radius: 0px;
+		    }
+		}
+	}
+
+	.menu-graphic a {
+		display: block;
+	}
+	
+	.menu-item-title {
+		margin: 0px !important;
+	    padding: 0px !important;
+	    background-color: @tertiary-color;
+	    color: @tertiary-color-inverted !important;
+	    opacity: 0.85;
+	    bottom: 0;
+	    position: absolute;
+	    width: 100.25%;
+	    display: table;
+	    vertical-align: middle;
+	    min-height: 70px;
+
+	    .menu-item-title-inner {
+		    display: table-cell;
+		    vertical-align: middle;
+		    padding-right: 90px;
+		    padding-left: 10px;
+		}
+	}
+
+	.menu-item-body {
+		padding:@menu-body-padding;
+	}
+
+	.menu-item-button {
+		padding:@menu-body-padding;
+		
+		button {
+			height: 50vh;
+		    width: 100%;
+		    padding: 0px;
+		    margin: 0px;
+		    display: block;
+		    position: absolute;
+		    top: 0px;
+		    left: 0px;
+		    background-color: transparent !important;
+		    color: transparent !important;
+			
+			&:hover {
+				background-color:@button-hover-color;
+				color:@button-text-hover-color;
+			}
+			
+			&.visited {
+				background-color:@button-disabled-color;
+				color:@button-text-disabled-color;
+			}
+		}
+	}
+
+	.menu-item-duration {
+		float:none;
+		.dir-rtl & {
+			float:none;
+		}
+	}
+}
+
+
+@media (max-width: 1024px) {
+	.tilesmenu-menu .menu-container-inner .menu-header .menu-header-inner {margin-top: 0px !important;}
+	.tilesmenu-menu .menu-container-inner .menu-header, .tilesmenu-menu .menu-container-inner .menu-tile-items {width: 50%;}
+	.tilesmenu-menu .menu-item {width: 100%; height: auto;}
+	.location-menu .navigation-drawer-toggle-button {right: 50% !important;}
+}
+
+@media (max-height: 640px) {
+	.tilesmenu-menu .menu-header-inner.has-image img.menu-image {max-width: 70% !important;}
+}
+
+@media all and (max-width:@device-width-medium) {
+
+	.location-menu .navigation {
+		background-color: @tertiary-color;
+		box-shadow: 0 2px 5px rgba(0,0,0,0.26);
+	}
+	.location-menu .navigation-drawer-toggle-button {right: 58px !important;}
+	.location-menu .drawer {z-index: 500 !important;}
+	.location-menu .drawer .drawer-holder {padding-top: inherit;}
+	.location-menu .drawer .drawer-toolbar {top: inherit; left: inherit;}
+
+	.tilesmenu-menu {
+
+		.menu-container-inner {
+
+			.menu-header {
+			    display: block;
+			    position: relative;
+			    width: 100%;
+			    height: auto;
+			    left: inherit;
+			    top: inherit;
+			    margin-top: 0px;
+			    margin-bottom: 0px;
+			    -webkit-box-shadow: none;
+	    		-moz-box-shadow: none;
+	    		box-shadow: none;
+	    		z-index: inherit;
+
+			    .menu-header-inner {
+				    height: inherit;
+
+				    .menu-title {
+						height: inherit;
+					    overflow: inherit;
+					    position: inherit;
+					    bottom: inherit;
+					    width: inherit;
+					}
+
+				    .menu-body {
+				    	height: inherit;
+					    overflow-x: inherit;
+					    overflow-y: inherit;
+					    position: inherit;
+					    bottom: inherit;
+					    width: inherit;
+
+				    	.menu-body-inner {
+					    	line-height: inherit;
+						}
+					}
+			    }
+			}
+
+			.menu-tile-items {
+			    display: block;
+			    position: relative;
+			    width: 100%;
+			    right: inherit;
+			    top: inherit;
+			    height: auto;
+			    margin-top: 0px;
+			}
+
+		}
+
+		.menu-inner {
+			padding:0;
+		}
+
+		.menu-title-inner{
+			padding:15px 0 0;
+		}
+
+		.menu-body-inner{
+			padding:0px 0 10px;
+		}
+
+		.menu-item{
+			width:100%;
+			display: block;
+			height: auto;
+			margin-bottom:0px !important;
+			
+			&.nth-child-even, &.nth-child-odd{
+				
+				.menu-item-inner{
+					margin:0;
+					max-width: inherit !important;
+				}
+			}
+		}
+	}
+}
