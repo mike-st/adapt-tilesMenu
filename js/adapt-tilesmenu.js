@@ -21,6 +21,11 @@ define([
                     item.set('_isReady', true);
                 }
             });
+
+            /* COUNTS MENU ITEMS AND PLACES NUMBER */
+            $(".menu-item").each(function(i) {
+                $(this).find(".menu-item-button").attr('data-content', ++i);
+            });
         }
 
     }, {
@@ -60,11 +65,6 @@ define([
                 this.$el.imageready(this.setReadyStatus.bind(this));
                 return;
             }
-
-            /* COUNTS MENU ITEMS AND PLACES NUMBER */
-            $(".menu-item").each(function(i) {
-                $(this).find(".menu-item-button").attr('data-content', ++i);
-            });
 
             this.setReadyStatus();
         },
