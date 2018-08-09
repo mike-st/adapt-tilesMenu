@@ -55,7 +55,9 @@
 			    height: 100%;
 			    text-align: left;
 			    text-shadow: none !important;
-			    background-color: @inverted-foreground-color !important;
+			    background-color: @tertiary-color !important;
+			    border:none;
+			    border-right: 1px solid @white;
 
 			    .menu-title {
 					height: auto;
@@ -66,7 +68,7 @@
 				    font-size: 30px !important;
 				    line-height: 36px !important;
     				padding-bottom: 5px;
-    				color: @foreground-color !important;
+    				color: @tertiary-color-inverted !important;
     				margin-bottom:@menu-title-padding-bottom;
 				}
 
@@ -77,7 +79,7 @@
 				    position: absolute;
 				    bottom: 0px;
 				    width: 80%;
-				    color: @foreground-color !important;
+				    color: @tertiary-color-inverted !important;
 				    margin-bottom:@menu-title-padding-bottom;
 
 			    	.menu-body-inner {
@@ -237,6 +239,7 @@
 	.location-menu .navigation {
 		background-color: @tertiary-color;
 		box-shadow: 0 2px 5px rgba(0,0,0,0.26);
+		border-bottom: 1px solid @white;
 	}
 	.location-menu .navigation-drawer-toggle-button {right: 58px !important;}
 	.location-menu .drawer {z-index: 500 !important;}
@@ -263,6 +266,7 @@
 
 			    .menu-header-inner {
 				    height: inherit;
+				    border-right:none;
 
 				    .menu-title {
 						height: inherit;
