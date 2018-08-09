@@ -54,10 +54,17 @@ define([
 
         postRender: function() {
             var graphic = this.model.get('_graphic');
+            var nthChild = this.model.get("_nthChild");
+
             if (graphic && graphic.src) {
                 this.$el.imageready(this.setReadyStatus.bind(this));
                 return;
             }
+
+            /* COUNTS MENU ITEMS AND PLACES NUMBER */
+            $(".menu-item").each(function(i) {
+                $(this).find(".menu-item-button").attr('data-content', ++i);
+            });
 
             this.setReadyStatus();
         },
