@@ -383,6 +383,12 @@
 	.location-menu .drawer .drawer-holder {padding-top: inherit;}
 	.location-menu .drawer .drawer-toolbar {top: inherit; left: inherit;}
 
+	#wrapper .tilesmenu-menu .menu-item-inner:hover .menu-item-button+.page-level-progress-menu-item{
+    	width:60px !important;
+    	right: 24px;
+    	transition:none !important;
+	}
+
 	.tilesmenu-menu {
 
 		.menu-container-inner {
@@ -428,6 +434,7 @@
 			    }
 			}
 
+
 			.menu-tile-items {
 			    display: block;
 			    position: relative;
@@ -442,6 +449,31 @@
 
 		.menu-inner {
 			padding:0;
+		}
+
+		.menu-item-button {
+			button {
+				.viewtext {
+					background-color:@quaternary-color-inverted !important;
+					color:@quaternary-color !important;
+				}
+				p {display:none;}
+				&:hover {
+					background-color:transparent !important;
+					color:transparent !important;
+
+					&:before {
+					    display: none;
+					}
+					.viewtext {
+						background-color:@quaternary-color !important;
+						color:@quaternary-color-inverted !important;
+					}
+					#tilemenupopup {
+						display: none;
+					}
+				}
+			}
 		}
 
 		.menu-title-inner{
