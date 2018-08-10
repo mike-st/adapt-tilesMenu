@@ -1,4 +1,7 @@
 /* POSITIONING OF NAV ICONS */
+.location-menu {
+	overflow-y: hidden;	
+}
 .location-menu .navigation {
     background-color: transparent;
     box-shadow: none;
@@ -92,11 +95,12 @@
 		.menu-tile-items {
 		    display: inline-block;
 		    position: absolute;
+		    position: -ms-device-fixed;
 		    width: 67%;
 		    vertical-align: top;
 		    right: 0px;
 		    top: 0px;
-		    height: auto;
+		    height: 100%;
 		    overflow-x: hidden;
 		}
 	}
@@ -188,7 +192,7 @@
 	    width: 100.25%;
 	    display: table;
 	    vertical-align: middle;
-	    min-height: 70px;
+	    height: 70px;
 	    font-size: 21px !important;
 
 	    .menu-item-title-inner {
@@ -368,7 +372,7 @@
 }
 
 @media all and (max-width:@device-width-medium) {
-
+	.location-menu {overflow-y: scroll;	}
 	.location-menu .navigation {
 		background-color: @tertiary-color;
 		box-shadow: 0 2px 5px rgba(0,0,0,0.26);
