@@ -25,6 +25,11 @@ define([
             /* COUNTS MENU ITEMS AND PLACES NUMBER */
             $(".menu-item").each(function(i) {
                 $(this).find(".menu-item-button").attr('data-content', ++i);
+                $('.menu-item-button[data-content="' + i + '"]').click(function(){
+                    /* Below addes page number in for the menu */
+                    $('.navpagenum').text( 'Page ' + i + ' of ' + nthChild );
+                    $('.arianavpgnum').text( 'Page ' + i + ' of ' + nthChild ).attr('role','region').attr('tabindex','0').addClass('aria-label');
+                });
             });
         }
 
