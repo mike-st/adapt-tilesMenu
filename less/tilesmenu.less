@@ -236,17 +236,16 @@
     			margin: 0px 25%;
 			}
 
-			.viewtext:after {
-			    content: '';
-			    position: absolute;
-			    left: 50%;
-			    margin-top: 35px;
-			    margin-left: -10px;
-			    width: 0;
-			    height: 0;
-			    border-top: solid 10px transparent;
-			    border-left: solid 10px transparent;
-			    border-right: solid 10px transparent;
+			#tilemenupopup {
+				color: transparent !important;
+				background-color: transparent !important;
+				text-decoration: none;
+				padding: 10px;
+			    display: block;
+			    text-align: center;
+			    position: relative;
+			    margin-top: 10px;
+			    outline: none;
 			}
 			
 			&:hover {
@@ -254,15 +253,29 @@
 				color:@quaternary-color-inverted !important;
 				cursor: pointer;
 
+				&:before {
+				    content: 'Click or tap View to start.';
+				    display: block;
+				    font-size: 15px;
+				    font-weight: 700;
+				    color:@quaternary-color-inverted;
+				    font-style: italic;
+				    letter-spacing: 1px;
+				    position: absolute;
+				    text-align: center;
+				    width: 100%;
+				    left: 0px;
+    				margin-top: -30px;
+				}
+
 				.viewtext {
 					background-color:@quaternary-color-inverted !important;
 					color:@quaternary-color !important;
 				}
 
-				.viewtext:after {
-				    border-top: solid 10px @quaternary-color-inverted;
-				    border-left: solid 10px transparent;
-				    border-right: solid 10px transparent;
+				#tilemenupopup {
+					color:@quaternary-color !important;
+				    background-color: @quaternary-color-inverted !important;
 				}
 			}
 			
