@@ -24,6 +24,7 @@ define([
 
             /* COUNTS MENU ITEMS AND PLACES NUMBER */
             $(".menu-item").each(function(i) {
+                $(this).attr('name', 'nth-child-' + parseInt(i+1)); //Makes it jump to 1st page on launch
                 $(this).find(".menu-item-button").attr('data-content', ++i);
                 $('.menu-item-button[data-content="' + i + '"]').click(function(){
                     /* Below addes page number in for the menu */
