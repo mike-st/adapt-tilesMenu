@@ -24,14 +24,26 @@ define([
 
             /* COUNTS MENU ITEMS AND PLACES NUMBER */
             $(".menu-item").each(function(i) {
-                $(this).attr('name', 'nth-child-' + parseInt(i+1)); //Makes it jump to 1st page on launch
+                $(this).attr('name', 'nth-child-' + parseInt(i+1));
                 $(this).find(".menu-item-button").attr('data-content', ++i);
                 $('.menu-item-button[data-content="' + i + '"]').click(function(){
                     /* Below addes page number in for the menu */
                     $('.navpagenum').text( 'Page ' + i + ' of ' + nthChild );
                     $('.arianavpgnum').text( 'Page ' + i + ' of ' + nthChild ).attr('role','region').attr('tabindex','0').addClass('aria-label');
                 });
+
+                //BELOW COUNTS BODY MESSAGE STRING COUNT IF TOO LONG MAKES BUTTON
+                var myPtag = $('.menu-item-button[data-content="' + i + '"] button').find('p');
+                if(myPtag.text().length >= 200){
+                    $('.menu-item-button[data-content="' + i + '"] button p').html($('.menu-item-button[data-content="' + i + '"] button p').html().substring(0, 200) + " ...<br/>" + "<div id=\"tilemenupopup\">+ Read more</div>");
+                }
             });
+
+            if ($(".location-menu").hasClass("accessibility")) {
+                window.setTimeout(function(){
+                    $( ".nth-child-1 .viewtext" ).trigger( "click" );
+                }, 250);
+            }
         }
 
     }, {
@@ -41,7 +53,8 @@ define([
     var BoxMenuItemView = MenuView.extend({
 
         events: {
-            'click button' : 'onClickMenuItemButton'
+            'click .viewtext' : 'onClickMenuItemButton',
+            'click #tilemenupopup' : 'menunotifyPopup'
         },
 
         className: function() {
@@ -78,7 +91,25 @@ define([
         onClickMenuItemButton: function(event) {
             if(event && event.preventDefault) event.preventDefault();
             if(this.model.get('_isLocked')) return;
+
             Backbone.history.navigate('#/id/' + this.model.get('_id'), {trigger: true});
+        },
+
+        menunotifyPopup: function (event) {
+            event.preventDefault();
+
+            this.model.set('_active', false);
+
+            var bodyText = this.model.get('body');
+            var titleText = this.model.get('displayTitle');
+
+            var popupObject = {
+                title: titleText,
+                body: bodyText
+            };
+
+            Adapt.trigger('notify:popup', popupObject);
+
         }
 
     }, {
