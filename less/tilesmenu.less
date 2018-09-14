@@ -259,7 +259,7 @@
 			&:hover {
 				background-color:@quaternary-color !important;
 				color:@quaternary-color-inverted !important;
-				cursor: pointer;
+				cursor: default;
 
 				&:before {
 				    content: 'Click or tap View to start.';
@@ -273,17 +273,19 @@
 				    text-align: center;
 				    width: 100%;
 				    left: 0px;
-    				margin-top: -30px;
+    				    margin-top: -30px;
 				}
 
 				.viewtext {
 					background-color:@quaternary-color-inverted !important;
 					color:@quaternary-color !important;
+					cursor: pointer;
 				}
 
 				#tilemenupopup {
 					color:@quaternary-color !important;
-				    background-color: @quaternary-color-inverted !important;
+				        background-color: @quaternary-color-inverted !important;
+					cursor: pointer;
 				}
 			}
 			
