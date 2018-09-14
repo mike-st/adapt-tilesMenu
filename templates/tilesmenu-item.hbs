@@ -11,12 +11,3 @@
         {{/if}}
     </div>
 </div>
-<script>
-$('.menu-item-{{_id}} .menu-item-button button').each(function() {
-    var $pTag = $(this).find('p');
-    if($pTag.text().length > 250){
-      $(this).html($(this).html().substring(0, 250) + " ...<br/>" + "<a href=\"#\" id=\"tilemenupopup\">+ Read more</a>");
-      $( ".menu-item-{{_id}} #tilemenupopup" ).on( "click", function() { require("coreJS/adapt").trigger("notify:popup",{title:"{{{compile displayTitle}}}",body:"{{{compile_a11y_text body}}}"});return false; });
-   }
-});
-</script>
