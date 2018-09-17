@@ -220,17 +220,20 @@
 	    -o-transition:all .2s ease-in-out;
 	    transition:all .2s ease-in-out;
 		
-		button {
+		.origbutton {
 			height: 50vh;
 		    width: 100%;
 		    padding: 0px;
 		    margin: 0px;
-		    display: block;
+		    display: flex;
+			flex-flow: row wrap;
+			justify-content: space-around;
+			align-items: center;
 		    position: absolute;
 		    top: 0px;
 		    left: 0px;
 		    text-align: left;
-		    overflow-x: hidden;
+		    overflow: hidden;
 		    background-color: transparent !important;
 		    color: transparent !important;
 
@@ -241,6 +244,7 @@
 				padding: 10px 0px;
 				color:transparent !important;
 				width: 50%;
+				height: 20px;
     			margin: 0px 25%;
 			}
 
@@ -255,11 +259,16 @@
 			    margin-top: 10px;
 			    outline: none;
 			}
+
+			p {
+			    width: 86%;
+			}
 			
 			&:hover {
 				background-color:@quaternary-color !important;
 				color:@quaternary-color-inverted !important;
 				cursor: default;
+
 
 				&:before {
 				    content: 'Click or tap View to start.';
@@ -269,11 +278,8 @@
 				    color:@quaternary-color-inverted;
 				    font-style: italic;
 				    letter-spacing: 1px;
-				    position: absolute;
 				    text-align: center;
 				    width: 100%;
-				    left: 0px;
-    				    margin-top: -30px;
 				}
 
 				.viewtext {
@@ -284,8 +290,8 @@
 
 				#tilemenupopup {
 					color:@quaternary-color !important;
-				        background-color: @quaternary-color-inverted !important;
-					cursor: pointer;
+				    background-color: @quaternary-color-inverted !important;
+				    cursor: pointer;
 				}
 			}
 			
@@ -365,7 +371,7 @@
     transition:none !important;
 }
 .touch #wrapper .tilesmenu-menu .menu-item-inner .menu-item-button {
-	button {
+	.origbutton {
 		.viewtext {
 			background-color:@quaternary-color-inverted !important;
 			color:@quaternary-color !important;
@@ -481,7 +487,7 @@
 		}
 
 		.menu-item-button {
-			button {
+			.origbutton {
 				.viewtext {
 					background-color:@quaternary-color-inverted !important;
 					color:@quaternary-color !important;
