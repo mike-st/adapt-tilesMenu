@@ -33,9 +33,9 @@ define([
                 });
 
                 //BELOW COUNTS BODY MESSAGE STRING COUNT IF TOO LONG MAKES BUTTON
-                var myPtag = $('.menu-item-button[data-content="' + i + '"] .origbutton').find('p');
+                var myPtag = $('.menu-item-button[data-content="' + i + '"] .origbutton').find('p:first');
                 if(myPtag.text().length >= 200){
-                    $('.menu-item-button[data-content="' + i + '"] .origbutton p').html($('.menu-item-button[data-content="' + i + '"] .origbutton p').html().substring(0, 200) + " ...<br/>" + "<div id=\"tilemenupopup\">+ Read more</div>");
+                    $('.menu-item-button[data-content="' + i + '"] .origbutton p:first').addClass('myPtag').html($('.menu-item-button[data-content="' + i + '"] .origbutton p:first').html().substring(0, 200) + " ...<br/>" + "<div id=\"tilemenupopup\">+ Read more</div>");
                 }
             });
 
