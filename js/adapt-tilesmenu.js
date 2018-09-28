@@ -39,11 +39,21 @@ define([
                 }
             });
 
-            if ($(".location-menu").hasClass("accessibility")) {
+            // Triggers Page 1 when Accessibility button is pressed
+            if ($('.location-menu').hasClass('accessibility')) {
                 window.setTimeout(function(){
-                    $( ".nth-child-1 .viewtext" ).trigger( "click" );
+                    $( '.nth-child-1 .viewtext' ).trigger( 'click' );
                 }, 250);
             }
+
+            // Checks if you are on Main Menu or Sub Menu
+            if ($('.navigation-back-button').hasClass('display-none')) {
+                //Do Nothing on Main Menu
+            } else {
+                $('.tilesmenu-menu .menu-container-inner .menu-header .menu-header-inner .menu-title').addClass('submenu-title');
+                $('.tilesmenu-menu .menu-container-inner .menu-header .menu-header-inner .menu-body').addClass('submenu-body');
+            }
+
         }
 
     }, {
