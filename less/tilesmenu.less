@@ -80,6 +80,17 @@
     				margin-bottom:@menu-title-padding-bottom;
 				}
 
+				.submenu-title {
+					bottom: inherit !important;
+				    position: relative;
+				    display: flex;
+				    align-items: center;
+				    width: 100%;
+				    height: 12vh;
+				    overflow-x: hidden;
+				    overflow-y: auto;
+				}
+
 			    .menu-body {
 			    	height: 43vh;
 				    overflow-x: hidden;
@@ -89,6 +100,18 @@
 				    width: 80%;
 				    color: @tertiary-color-inverted !important;
 				    margin-bottom:@menu-title-padding-bottom;
+
+			    	.menu-body-inner {
+				    	line-height: 150%;
+					}
+				}
+
+				.submenu-body {
+			    	bottom: inherit;
+				    min-height: 75vh;
+				    position: relative;
+				    display: block;
+				    width: 100%;
 
 			    	.menu-body-inner {
 				    	line-height: 150%;
@@ -246,7 +269,7 @@
 				color:transparent !important;
 				width: 50%;
 				height: 20px;
-    				margin: 0px 25%;
+    			margin: 0px 25%;
 			}
 
 			#tilemenupopup {
@@ -265,7 +288,7 @@
 			    width: 86%;
 			    display: none;
 			}
-			
+
 			.myPtag {
 				display: block;
 			}
@@ -382,7 +405,7 @@
 			background-color:@quaternary-color-inverted !important;
 			color:@quaternary-color !important;
 		}
-		p {display:none;}
+		p, .myPtag {display:none;}
 		&:hover {
 			background-color:transparent !important;
 			color:transparent !important;
@@ -500,7 +523,7 @@
 					background-color:@quaternary-color-inverted !important;
 					color:@quaternary-color !important;
 				}
-				p {display:none;}
+				p, .myPtag {display:none;}
 				&:hover {
 					background-color:transparent !important;
 					color:transparent !important;
