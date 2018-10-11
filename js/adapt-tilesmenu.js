@@ -32,19 +32,29 @@ define([
                     $('.arianavpgnum').text( 'Page ' + i + ' of ' + nthChild ).attr('role','region').attr('tabindex','0').addClass('aria-label');
                 });
 
+                //Replace UL list tags to p tags
+                $('.menu-item-button[data-content="' + i + '"] .origbutton ul').replaceWith(function(){
+                    return $("<p />", {html: $(this).html()});
+                });
+
+                //Replace OL list tags to p tags
+                $('.menu-item-button[data-content="' + i + '"] .origbutton ol').replaceWith(function(){
+                    return $("<p />", {html: $(this).html()});
+                });
+
+                //PUT P tags in front of TABLE tags to hide
+                $('.menu-item-button[data-content="' + i + '"] .origbutton').find('table').wrap( "<p></p>" );
+
                 //BELOW COUNTS BODY MESSAGE STRING COUNT IF TOO LONG MAKES BUTTON
                 var myPtag = $('.menu-item-button[data-content="' + i + '"] .origbutton').find('p:first');
-                if(myPtag.text().length >= 200){
+                var howmanyPtag = $('.menu-item-button[data-content="' + i + '"] .origbutton').find('p');
+
+                if(myPtag.text().length >= 200 || howmanyPtag.length > 1){
                     $('.menu-item-button[data-content="' + i + '"] .origbutton p:first').addClass('myPtag').html($('.menu-item-button[data-content="' + i + '"] .origbutton p:first').html().substring(0, 200) + " ...<br/>" + "<div id=\"tilemenupopup\">+ Read more</div>");
+                } else {
+                    $('.menu-item-button[data-content="' + i + '"] .origbutton p:first').addClass('myPtag');
                 }
             });
-
-            // Triggers Page 1 when Accessibility button is pressed
-            if ($('.location-menu').hasClass('accessibility')) {
-                window.setTimeout(function(){
-                    $( '.nth-child-1 .viewtext' ).trigger( 'click' );
-                }, 250);
-            }
 
             // Checks if you are on Main Menu or Sub Menu
             if ($('.navigation-back-button').hasClass('display-none')) {
@@ -52,6 +62,26 @@ define([
             } else {
                 $('.tilesmenu-menu .menu-container-inner .menu-header .menu-header-inner .menu-title').addClass('submenu-title');
                 $('.tilesmenu-menu .menu-container-inner .menu-header .menu-header-inner .menu-body').addClass('submenu-body');
+                //BELOW PULLS TITLE
+                var navtitle2 = $( ".menu-title-inner" ).text();
+                $( ".modulehead" ).html( navtitle2 );
+            }
+
+            // Triggers Page 1 when Accessibility button is pressed
+            if ($('.location-menu').hasClass('accessibility')) {
+                // Checks if you are on Main Menu or Sub Menu
+                if ($('.navigation-back-button').hasClass('display-none')) {
+                    window.setTimeout(function(){
+                        $( '.nth-child-1 .viewtext' ).trigger( 'click' );
+                    }, 250);
+                } else {
+                    window.setTimeout(function(){
+                        $( '.nth-child-1 .viewtext' ).trigger( 'click' );
+                        window.setTimeout(function(){
+                            $( '.nth-child-1 .viewtext' ).trigger( 'click' );
+                        }, 250);
+                    }, 250);
+                }
             }
 
         }
