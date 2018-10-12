@@ -78,6 +78,7 @@ define([
                     window.setTimeout(function(){
                         $( '.nth-child-1 .viewtext' ).trigger( 'click' );
                         window.setTimeout(function(){
+                            $('head').prepend("<style>.accessibility .audio-controls .audio-inner button {display:none;}</style>");
                             $( '.nth-child-1 .viewtext' ).trigger( 'click' );
                         }, 250);
                     }, 250);
