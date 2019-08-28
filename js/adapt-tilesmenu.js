@@ -59,6 +59,8 @@ define([
             // Checks if you are on Main Menu or Sub Menu
             if ($('.navigation-back-button').hasClass('display-none')) {
                 //Do Nothing on Main Menu
+                var navtitle2 = $( ".menu-title-inner" ).text();
+                $( ".modulehead" ).html( navtitle2 );
             } else {
                 $('.tilesmenu-menu .menu-container-inner .menu-header .menu-header-inner .menu-title').addClass('submenu-title');
                 $('.tilesmenu-menu .menu-container-inner .menu-header .menu-header-inner .menu-body').addClass('submenu-body');
