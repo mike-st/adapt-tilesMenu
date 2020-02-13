@@ -60,7 +60,8 @@ Several menu-related elements are assigned a label using the [aria-label](https:
 
 ## Limitations
  
-No known limitations.  
+<p><strong>DOES NOT WORK WITH FRAMEWORK VERSION 5</strong>. Please go to the Framework 5 version of this menu on my other github site...</p>
+<p>[github.com/zarek3333/adapt-tilesMenu](https://github.com/zarek3333/adapt-tilesMenu)</p>
 
 ----------------------------
 **Version number:**  3.0.3   <a href="https://community.adaptlearning.org/" target="_blank"><img src="https://github.com/adaptlearning/documentation/blob/master/04_wiki_assets/plug-ins/images/adapt-logo-mrgn-lft.jpg" alt="adapt learning logo" align="right"></a> 
