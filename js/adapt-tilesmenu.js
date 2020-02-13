@@ -1,7 +1,8 @@
 define([
     'core/js/adapt',
-    'core/js/views/menuView'
-], function(Adapt, MenuView) {
+    'core/js/views/menuView',
+    'core/js/views/menuItemView'
+], function(Adapt, MenuView, MenuItemView) {
 
     var BoxMenuView = MenuView.extend({
 
