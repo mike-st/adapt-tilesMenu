@@ -1,36 +1,35 @@
 define([
-    'core/js/adapt',
-    'core/js/views/menuView',
-    'core/js/views/menuItemView'
-], function(Adapt, MenuView, MenuItemView) {
+    "core/js/views/menuView",
+    "./adapt-tileMenuItemView",
+    "core/js/adapt",
+], function(MenuView, TileMenuItemView, Adapt) {
 
-    var BoxMenuView = MenuView.extend({
+    var TileMenuView = MenuView.extend({
+
+        events: {
+            'mousemove .firsttileview .menu-header' : 'firstPGlaunch',
+            'mousemove .firsttileview .menu-tile-items' : 'firstPGlaunch',
+            'keyup .tiles-menu-inner .menu-header' : 'accessibilityOn',
+            'keyup .tiles-menu-inner .menu-tile-items' : 'accessibilityOn'
+        },
 
         className: function() {
             return MenuView.prototype.className.apply(this) + " tilesmenu-menu";
         },
 
         postRender: function() {
-            var nthChild = 0;
-            this.model.getChildren().each(function(item) {
-                if (item.get('_isAvailable') && !item.get('_isHidden')) {
-                    item.set('_nthChild', ++nthChild);
-                    this.$('.menu-tile-items').append(new BoxMenuItemView({model: item}).$el);
-                }
-
-                if(item.get('_isHidden')) {
-                    item.set('_isReady', true);
-                }
-            });
+            this.setUpItems();
 
             /* COUNTS MENU ITEMS AND PLACES NUMBER */
+            var numofpgs = $(".menu-item").length;
             $(".menu-item").each(function(i) {
                 $(this).attr('name', 'nth-child-' + parseInt(i+1));
                 $(this).find(".menu-item-button").attr('data-content', ++i);
                 $('.menu-item-button[data-content="' + i + '"]').click(function(){
                     /* Below addes page number in for the menu */
-                    $('.navpagenum').text( 'Page ' + i + ' of ' + nthChild );
-                    $('.arianavpgnum').text( 'Page ' + i + ' of ' + nthChild ).attr('role','region').attr('tabindex','0').addClass('aria-label');
+                    console.log('Page ' + i + ' of ' + numofpgs)
+                    $('.navpagenum').text( 'Page ' + i + ' of ' + numofpgs );
+                    $('.arianavpgnum').text( 'Page ' + i + ' of ' + numofpgs ).attr('role','region').attr('tabindex','0').addClass('aria-label');
                 });
 
                 //Replace UL list tags to p tags
@@ -58,7 +57,7 @@ define([
             });
 
             // Checks if you are on Main Menu or Sub Menu
-            if ($('.navigation-back-button').hasClass('display-none')) {
+            if ($('.nav__back-btn').hasClass('u-display-none')) {
                 //Do Nothing on Main Menu
                 //BELOW PULLS TITLE
                 var navtitle2 = $( '.menu-title-inner' ).text();
@@ -74,98 +73,62 @@ define([
             }
 
             // Triggers Page 1 when Accessibility button is pressed
-            if ($('.location-menu').hasClass('accessibility')) {
-                // Checks if you are on Main Menu or Sub Menu
-                if ($('.navigation-back-button').hasClass('display-none')) {
-                    window.setTimeout(function(){
-                        $( '.nth-child-1 .viewtext' ).trigger( 'click' );
-                    }, 250);
-                } else {
-                    window.setTimeout(function(){
-                        $( '.nth-child-1 .viewtext' ).trigger( 'click' );
-                        window.setTimeout(function(){
-                            $('head').prepend("<style>.accessibility .audio-controls .audio-inner button {display:none;}</style>");
-                            $( '.nth-child-1 .viewtext' ).trigger( 'click' );
-                        }, 250);
-                    }, 250);
-                }
+            var config = this.model.get("_tilesMenu");
+            var launchPGone = config && config._gotoPageone;
+
+            if (launchPGone == true) {
+                console.log("TILE MENU PAGE 1 LAUNCH IS OFF.");
+            } else if (launchPGone == false || $('.location-menu').hasClass('accessibility')) {
+                this.listenToOnce(Adapt, "menuView:postRender pageView:postRender", this.navigateTo); 
             }
 
-        }
-
-    }, {
-        template: 'tilesmenu'
-    });
-
-    var BoxMenuItemView = MenuView.extend({
-
-        events: {
-            'click .viewtext' : 'onClickMenuItemButton',
-            'click #tilemenupopup' : 'menunotifyPopup'
         },
 
-        className: function() {
-            var nthChild = this.model.get('_nthChild');
-            return [
-                'menu-item',
-                'menu-item-' + this.model.get('_id') ,
-                this.model.get('_classes'),
-                this.model.get('_isVisited') ? 'visited' : '',
-                this.model.get('_isComplete') ? 'completed' : '',
-                this.model.get('_isLocked') ? 'locked' : '',
-                'nth-child-' + nthChild,
-                nthChild % 2 === 0 ? 'nth-child-even' : 'nth-child-odd'
-            ].join(' ');
-        },
-
-        preRender: function() {
-            this.model.checkCompletionStatus();
-            this.model.checkInteractionCompletionStatus();
-        },
-
-        postRender: function() {
-            var graphic = this.model.get('_graphic');
-            var nthChild = this.model.get("_nthChild");
-
-            if (graphic && graphic.src) {
-                this.$el.imageready(this.setReadyStatus.bind(this));
-                return;
+        firstPGlaunch: function() {
+            // Checks if you are on Main Menu or Sub Menu
+            if ($('.nav__back-btn').hasClass('u-display-none')) {
+                $( '.firsttileview .menu-item[name="nth-child-1"] .origbutton .viewtext' ).trigger( 'click' );
+            } else {
+                //Do Nothing on SUB Menu
+                $('.tiles-menu-inner').removeClass('firsttileview');
             }
-
-            this.setReadyStatus();
         },
 
-        onClickMenuItemButton: function(event) {
-            if(event && event.preventDefault) event.preventDefault();
-            if(this.model.get('_isLocked')) return;
-
-            Backbone.history.navigate('#/id/' + this.model.get('_id'), {trigger: true});
+        navigateTo: function() {
+            if( $('.navpagenum:empty').length ) {
+                window.setTimeout(function(){
+                    console.log("1st view of TILE MENU.");
+                    $( '.firsttileview .menu-item[name="nth-child-1"] .origbutton .viewtext' ).trigger( 'click' );
+                }, 555);
+            } else {
+                $('.tiles-menu-inner').removeClass('firsttileview');
+                console.log("TILE MENU has been viewed before.");
+            } 
         },
 
-        menunotifyPopup: function (event) {
-            event.preventDefault();
+        accessibilityOn: function(e) {
+            var code = e.keyCode || e.which;
+            if (code == '9') {
+                $( '.tiles-menu-inner .menu-item[name="nth-child-1"] .origbutton .viewtext' ).trigger( 'click' );
+            }
+        },
 
-            this.model.set('_active', false);
+        setUpItems: function() {
+            var items = this.model.getAvailableChildModels();
+            var $items = this.$(".menu-tile-items");
 
-            var bodyText = this.model.get('body');
-            var titleText = this.model.get('displayTitle');
+            for (var i = 0, j = items.length; i < j; i++) {
+                var nthChild = { model: items[i] };
 
-            var popupObject = {
-                title: titleText,
-                body: bodyText
-            };
-
-            Adapt.trigger('notify:popup', popupObject);
-
+                $items.append(new TileMenuItemView(nthChild).$el);
+            }
         }
 
-    }, {
-        template: 'tilesmenu-item'
-    });
+    }, { template: 'tilesmenu' });
 
     Adapt.on('router:menu', function(model) {
 
-        $('#wrapper').append(new BoxMenuView({model: model}).$el);
+        $('#wrapper').append(new TileMenuView({model: model}).$el);
 
     });
 

@@ -16,19 +16,21 @@
     top: -2px !important;
     left: 110px;
 }
-.location-menu .navigation-back-button {
+.location-menu .nav__back-btn {
     right: 67% !important;
     margin-right: 30px;
     top: -2px !important;
     left: inherit !important;
 }
-.location-menu .navigation-drawer-toggle-button {
+.location-menu .nav__drawer-btn {
     right: 67% !important;
+    float: none;
+    position: absolute;
 }
-.location-menu .drawer .drawer-holder {
+.location-menu .drawer .drawer__holder {
     padding-top: 0px;
 }
-.location-menu .drawer .drawer-toolbar {
+.location-menu .drawer .drawer__toolbar {
     top: 0px;
     left: 0px;
 }
@@ -53,7 +55,7 @@
 		    -webkit-box-shadow: 0 0 50px 0 rgba(0,0,0,0.5);
     		-moz-box-shadow: 0 0 50px 0 rgba(0,0,0,0.5);
     		box-shadow: 0 0 50px 0 rgba(0,0,0,0.5);
-    		z-index: 89;
+    		z-index: 79;
 
 		    .menu-header-inner {
 		    	padding: 10%;
@@ -143,7 +145,7 @@
 		margin-bottom:0px !important;
 
 
-		&.nth-child-even{
+		&:nth-child(even){
 			.menu-item-inner{
 				margin-left:0px !important;
 				.dir-rtl & {
@@ -153,7 +155,7 @@
 			}
 		}
 
-		&.nth-child-odd {
+		&:nth-child(odd) {
 			clear: both;
 			
 			.menu-item-inner {
@@ -477,7 +479,7 @@
 	.tilesmenu-menu .menu-container-inner .menu-header .menu-header-inner {margin-top: 0px !important;}
 	.tilesmenu-menu .menu-container-inner .menu-header, .tilesmenu-menu .menu-container-inner .menu-tile-items {width: 50%;}
 	.tilesmenu-menu .menu-item {width: 100%; height: auto;}
-	.location-menu .navigation-drawer-toggle-button, .location-menu .navigation-back-button {right: 50% !important;}
+	.location-menu .nav__drawer-btn, .location-menu .nav__back-btn {right: 50% !important;}
 
 }
 
@@ -492,11 +494,12 @@
 		box-shadow: 0 2px 5px rgba(0,0,0,0.26);
 		border-bottom: 1px solid @white;
 	}
-	.location-menu .navigation-drawer-toggle-button {right: 58px !important;}
-	.location-menu .navigation-back-button {right: inherit !important; margin-right: 0px !important;}
-	.location-menu .drawer {z-index: 500 !important;}
-	.location-menu .drawer .drawer-holder {padding-top: inherit;}
-	.location-menu .drawer .drawer-toolbar {top: inherit; left: inherit;}
+	.location-menu .nav__drawer-btn {
+		margin-left:  ~"calc(100% - 120px)" !important;
+    	position: relative;
+    	right: inherit !important;
+	}
+	.location-menu .nav__back-btn {right: inherit !important; margin-right: 0px !important; position: absolute;}
 
 	#wrapper .tilesmenu-menu .menu-item-inner:hover .menu-item-button+.page-level-progress-menu-item{
     	width:60px !important;
@@ -613,7 +616,7 @@
 			height: auto;
 			margin-bottom:0px !important;
 			
-			&.nth-child-even, &.nth-child-odd{
+			&:nth-child(even), &:nth-child(odd){
 				
 				.menu-item-inner{
 					margin:0;
