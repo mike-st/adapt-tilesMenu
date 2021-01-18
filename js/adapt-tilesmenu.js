@@ -9,8 +9,8 @@ define([
         events: {
             'mousemove .firsttileview .menu-header' : 'firstPGlaunch',
             'mousemove .firsttileview .menu-tile-items' : 'firstPGlaunch',
-            'keyup .tiles-menu-inner .menu-header' : 'accessibilityOn',
-            'keyup .tiles-menu-inner .menu-tile-items' : 'accessibilityOn'
+            'mousemove .tiles-menu-inner .menu-header' : 'accessibilityOn',
+            'mousemove .tiles-menu-inner .menu-tile-items' : 'accessibilityOn'
         },
 
         className: function() {
@@ -107,10 +107,13 @@ define([
         },
 
         accessibilityOn: function(e) {
-            var code = e.keyCode || e.which;
-            if (code == '9') {
+            if ($('.location-menu').hasClass('accessibility')) {
+                console.log("TILE MENU Accessibility On");
                 $( '.tiles-menu-inner .menu-item[name="nth-child-1"] .origbutton .viewtext' ).trigger( 'click' );
+            } else {
+                //DO NOTHING
             }
+            
         },
 
         setUpItems: function() {
