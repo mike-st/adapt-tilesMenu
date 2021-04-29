@@ -60,14 +60,14 @@ define([
             if ($('.nav__back-btn').hasClass('u-display-none')) {
                 //Do Nothing on Main Menu
                 //BELOW PULLS TITLE
-                var navtitle2 = $( '.menu-title-inner' ).text();
+                var navtitle2 = this.model.get("displayTitle");
                 Adapt.offlineStorage.set('mycourseTitle', navtitle2);
                 var courseholder = Adapt.offlineStorage.get("mycourseTitle");
             } else {
                 $('.tilesmenu-menu .menu-container-inner .menu-header .menu-header-inner .menu-title').addClass('submenu-title');
                 $('.tilesmenu-menu .menu-container-inner .menu-header .menu-header-inner .menu-body').addClass('submenu-body');
                 //BELOW PULLS TITLE
-                var navtitle2 = $( '.menu-title-inner' ).text();
+                var navtitle2 = this.model.get("displayTitle");
                 Adapt.offlineStorage.set('mycourseTitle', navtitle2);
                 var courseholder = Adapt.offlineStorage.get("mycourseTitle");
             }
