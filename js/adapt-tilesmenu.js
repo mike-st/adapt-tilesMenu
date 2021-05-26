@@ -82,24 +82,32 @@ define([
         },
 
         firstPGlaunch: function() {
-            // Checks if you are on Main Menu or Sub Menu
-            if ($('.nav__back-btn').hasClass('u-display-none')) {
-                $( '.firsttileview .menu-item[name="nth-child-1"] .origbutton .viewtext' ).trigger( 'click' );
+            if((Adapt.offlineStorage.get("bookmarkPG") === "undefined") || (Adapt.offlineStorage.get("bookmarkPG") === undefined) || (Adapt.offlineStorage.get("bookmarkPG") == "")){
+                // Checks if you are on Main Menu or Sub Menu
+                if ($('.nav__back-btn').hasClass('u-display-none')) {
+                    $( '.firsttileview .menu-item[name="nth-child-1"] .origbutton .viewtext' ).trigger( 'click' );
+                } else {
+                    //Do Nothing on SUB Menu
+                    $('.tiles-menu-inner').removeClass('firsttileview');
+                }
             } else {
-                //Do Nothing on SUB Menu
-                $('.tiles-menu-inner').removeClass('firsttileview');
+                //Do nothing
             }
         },
 
         navigateTo: function() {
-            if( $('.navpagenum:empty').length ) {
-                window.setTimeout(function(){
-                    console.log("1st view of TILE MENU.");
-                    $( '.firsttileview .menu-item[name="nth-child-1"] .origbutton .viewtext' ).trigger( 'click' );
-                }, 555);
+            if((Adapt.offlineStorage.get("bookmarkPG") === "undefined") || (Adapt.offlineStorage.get("bookmarkPG") === undefined) || (Adapt.offlineStorage.get("bookmarkPG") == "")){
+                if( $('.navpagenum:empty').length ) {
+                    window.setTimeout(function(){
+                        console.log("1st view of TILE MENU.");
+                        $( '.firsttileview .menu-item[name="nth-child-1"] .origbutton .viewtext' ).trigger( 'click' );
+                    }, 555);
+                } else {
+                    $('.tiles-menu-inner').removeClass('firsttileview');
+                    console.log("TILE MENU has been viewed before.");
+                }
             } else {
-                $('.tiles-menu-inner').removeClass('firsttileview');
-                console.log("TILE MENU has been viewed before.");
+                //Do nothing
             } 
         },
 
