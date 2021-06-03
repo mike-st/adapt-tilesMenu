@@ -40,13 +40,27 @@
   "properties": {
     "pluginLocations": {
       "type":"object",
-      "required":true,
       "properties":{
         "config": {
           "type":"object"
         },
         "course": {
-          "type": "object"
+          "type": "object",
+          "properties": {
+            "_tilesMenu": {
+              "type": "object",
+              "legend": "Tile Menu",
+              "properties": {
+                "_gotoPageone": {
+                  "type": "boolean",
+                  "default": false,
+                  "title": "Check on so that menu won't launch at Page 1.",
+                  "inputType": {"type": "Boolean", "options": [true, false]},
+                  "validators": []
+                }
+              }
+            }
+          }
         },
         "contentobject": {
           "type":"object"

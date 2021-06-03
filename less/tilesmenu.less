@@ -81,12 +81,13 @@
 				}
 
 				.submenu-title {
-					bottom: inherit !important;
+				    bottom: inherit !important;
 				    position: relative;
 				    display: flex;
 				    align-items: center;
 				    width: 100%;
 				    height: 12vh;
+				    min-height: 180px;
 				    overflow-x: hidden;
 				    overflow-y: auto;
 				}
@@ -108,7 +109,7 @@
 
 				.submenu-body {
 			    	bottom: inherit;
-				    min-height: 75vh;
+				    min-height: ~"calc(82vh - 185px)";
 				    position: relative;
 				    display: block;
 				    width: 100%;
