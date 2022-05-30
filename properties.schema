@@ -72,7 +72,7 @@
         "contentobject": {
           "type":"object",
           "properties": {
-            "_tilesMenupg": {
+            "_tilesMenu": {
               "type": "object",
               "legend": "Tile Menu",
               "properties": {
