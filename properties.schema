@@ -58,13 +58,37 @@
                   "title": "Check on so that menu won't launch at Page 1.",
                   "inputType": {"type": "Boolean", "options": [true, false]},
                   "validators": []
+                },
+                "_threeacross": {
+                  "type": "boolean",
+                  "default": false,
+                  "title": "For 3 tiles across on desktops instead of 2",
+                  "inputType": {"type": "Boolean", "options": [true, false]},
+                  "validators": []
                 }
               }
             }
           }
         },
         "contentobject": {
-          "type":"object"
+          "type":"object",
+          "properties": {
+            "_tilesMenu": {
+              "type": "object",
+              "legend": "Tile Menu",
+              "properties": {
+                "_customTitle": {
+                  "type": "string",
+                  "title": "Add a custom menu title to override page title",
+                  "required": false,
+                  "default": "",
+                  "inputType": "Text",
+                  "validators": [],
+                  "translatable": true
+                }
+              }
+            }
+          }
         },
         "article": {
           "type":"object"
