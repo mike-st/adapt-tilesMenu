@@ -1,6 +1,6 @@
 <div class="menu-item-inner" style="{{#if _graphic.src}} background: url({{_graphic.src}}); background-size: cover; background-repeat: no-repeat; background-position: center;{{/if}} height: 50vh;" aria-label="{{_globals._menu._tilesmenu.menuItem}}" {{#if _globals._menu._tilesmenu.menuItem}}tabindex="0"{{/if}}>
     <div class="menu-item-title">
-        <div class="menu-item-title-inner h3" role="heading" aria-level="2" tabindex="0">{{#if _tilesMenupg._customTitle}}{{{_customTitle}}}{{else}}{{{compile displayTitle}}}{{/if}}</div>
+        <div class="menu-item-title-inner h3" role="heading" aria-level="2" tabindex="0">{{#if _tilesMenu._customTitle}}{{{_tilesMenu._customTitle}}}{{else}}{{{compile displayTitle}}}{{/if}}</div>
     </div>
     <div class="menu-item-button">
         <div aria-label="{{linkText}} {{#if _isVisited}}{{_globals._accessibility._ariaLabels.visited}}{{/if}}" class="{{#if _isVisited}}visited{{/if}} {{#if _isLocked}}disabled{{/if}} origbutton" {{#if _isLocked}}disabled="disabled"{{/if}}>
