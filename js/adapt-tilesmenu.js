@@ -80,6 +80,11 @@ define([
             // Triggers Page 1 when Accessibility button is pressed
             var config = this.model.get("_tilesMenu");
             var launchPGone = config && config._gotoPageone;
+            // Tracks 3 tile across or not
+            var threeAcross = config && config._threeacross;
+            if (threeAcross == true) {
+                $('.location-menu').addClass('tile3across');
+            }
 
             if (launchPGone == true) {
                 console.log("TILE MENU PAGE 1 LAUNCH IS OFF.");
