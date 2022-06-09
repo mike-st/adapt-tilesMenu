@@ -2,8 +2,28 @@
 .location-menu {
 	overflow-y: hidden;
 	
-	#accessibility-toggle {
+	#accessibility2toggle {
 		display: inline-block !important;
+		&:focus {
+			outline: 3px solid #0000E0 !important;
+		}
+	}
+
+	.page-level-progress-menu-item-indicator-bar .aria-label:focus {
+	    z-index: 710 !important;
+	    background: #0000E0 !important;
+	    width: 66.66% !important;
+	    min-height: 30px !important;
+	    overflow: hidden !important;
+	    display: inline-block;
+	    text-align: center;
+	    position: fixed !important;
+	    top: 0px !important;
+	    left: 33% !important;
+	    margin-top: 50vh !important;
+	    font-size: 15px !important;
+	    color: #ffffff !important;
+	    padding-top: 5px !important;
 	}
 }
 .location-menu .navigation {
@@ -21,6 +41,14 @@
     margin-right: 30px;
     top: -2px !important;
     left: inherit !important;
+}
+.accessibility.location-menu .navigation-back-button:not(.display-none) {
+	margin-top: 5px !important;
+    display: inline-block !important;
+    position: fixed;
+    font-size: 18px;
+    line-height: 0px !important;
+    letter-spacing: 0px;
 }
 .location-menu .navigation-drawer-toggle-button {
     right: 67% !important;
@@ -271,6 +299,12 @@
 				width: 50%;
 				height: 20px;
     			margin: 0px 25%;
+
+    			&:focus {
+					background-color:@quaternary-color !important;
+					color:@quaternary-color-inverted !important;
+					cursor: pointer;
+				}
 			}
 
 			#tilemenupopup {
@@ -585,4 +619,8 @@
 			}
 		}
 	}
+}
+
+html.accessibility .tilesmenu-menu .menu-item-button .origbutton .myPtag {
+	display: none;
 }

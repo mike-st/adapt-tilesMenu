@@ -8,9 +8,9 @@ define([
 
         events: {
             'mousemove .firsttileview .menu-header' : 'firstPGlaunch',
-            'mousemove .firsttileview .menu-tile-items' : 'firstPGlaunch',
+            'mousemove .firsttileview .menu-tile-items' : 'firstPGlaunch'/*,
             'keyup .tiles-menu-inner .menu-header' : 'accessibilityOn',
-            'keyup .tiles-menu-inner .menu-tile-items' : 'accessibilityOn'
+            'keyup .tiles-menu-inner .menu-tile-items' : 'accessibilityOn'*/
         },
 
         className: function() {
