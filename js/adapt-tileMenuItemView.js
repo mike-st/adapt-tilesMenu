@@ -4,6 +4,7 @@ define([ "core/js/views/adaptView", "core/js/adapt" ], function(AdaptView, Adapt
 
         events: {
             'click .viewtext' : 'onClickMenuItemButton',
+            'keyup .viewtext' : 'accessibilityOnViewItem',
             'click #tilemenupopup' : 'menunotifyPopup'
         },
 
@@ -41,6 +42,13 @@ define([ "core/js/views/adaptView", "core/js/adapt" ], function(AdaptView, Adapt
             if(this.model.get('_isLocked')) return;
 
             Backbone.history.navigate('#/id/' + this.model.get('_id'), {trigger: true});
+        },
+
+        accessibilityOnViewItem: function(event) {
+            var code = event.keyCode || event.which;
+            if (code == '13') {
+                this.onClickMenuItemButton();
+            }
         },
 
         menunotifyPopup: function (event) {

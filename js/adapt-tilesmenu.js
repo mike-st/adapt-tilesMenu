@@ -8,9 +8,9 @@ define([
 
         events: {
             'mousemove .firsttileview .menu-header' : 'firstPGlaunch',
-            'mousemove .firsttileview .menu-tile-items' : 'firstPGlaunch',
+            'mousemove .firsttileview .menu-tile-items' : 'firstPGlaunch'/*,
             'mousemove .tiles-menu-inner .menu-header' : 'accessibilityOn',
-            'mousemove .tiles-menu-inner .menu-tile-items' : 'accessibilityOn'
+            'mousemove .tiles-menu-inner .menu-tile-items' : 'accessibilityOn'*/
         },
 
         className: function() {
@@ -105,7 +105,7 @@ define([
                 if( $('.navpagenum:empty').length ) {
                     window.setTimeout(function(){
                         console.log("1st view of TILE MENU.");
-                        $( '.firsttileview .menu-item[name="nth-child-1"] .origbutton .viewtext' ).trigger( 'click' );
+                        $( 'html:not(.accessibility) .firsttileview .menu-item[name="nth-child-1"] .origbutton .viewtext' ).trigger( 'click' );
                     }, 555);
                 } else {
                     $('.tiles-menu-inner').removeClass('firsttileview');

@@ -2,8 +2,14 @@
 .location-menu {
 	overflow-y: hidden;
 	
-	#accessibility-toggle {
-		display: inline-block !important;
+	#accessibility2toggle {
+		display: inline-flex;
+
+		&:focus {
+			outline: 1px white solid !important;
+    		border: 2px black solid !important;
+    		border-radius: 4px;
+		}
 	}
 }
 .location-menu .nav {
@@ -21,6 +27,9 @@
     margin-right: 30px;
     top: -2px !important;
     left: inherit !important;
+    background-color:@item-color !important;
+	color:@item-color-inverted !important;
+	cursor: pointer;
 }
 .location-menu .nav__drawer-btn {
     right: 67% !important;
@@ -37,7 +46,7 @@
 
 /* Tile Menu Styles */
 .tilesmenu-menu {
-	background:@background;
+	background:@white;
 	.menu-container {
 	}
 
@@ -292,6 +301,12 @@
 				width: 50%;
 				height: 44px;
     			margin: 0px 25%;
+
+    			&:focus {
+					background-color:@item-color !important;
+					color:@item-color-inverted !important;
+					cursor: pointer;
+				}
 			}
 
 			#tilemenupopup {
@@ -380,7 +395,7 @@
 	    width: 50px;
 	    height: 36px;
 	    display: block;
-	    color: @btn-color;
+	    color: @item-color;
 	    font-size: 32px;
 	    font-family: inherit;
 	    line-height: 32px;
@@ -476,6 +491,19 @@
 	}
 }
 
+html.accessibility .tilesmenu-menu .menu-item-button .origbutton .myPtag {
+	display: none;
+}
+.location-menu #myemail {
+    right: 82%;
+}
+.location-menu #timer {
+	right: 70%;
+}
+.location-menu #timer:before {
+    display: none;
+}
+
 /* 3 across tile menu */
 @media (min-width: 1280px) {
     .tile3across .menu-item {
@@ -493,6 +521,15 @@
         font-size: 18px !important;
         line-height: 20px !important;
     }
+    .location-menu #myemail {
+    	right: 80%;
+	}
+	.location-menu #timer {
+	    right: 71%;
+	}
+	.location-menu #timer:before {
+	    display: none;
+	}
 }
 
 @media (max-width: 1024px) {
@@ -500,9 +537,16 @@
 	.tilesmenu-menu .menu-container-inner .menu-header, .tilesmenu-menu .menu-container-inner .menu-tile-items {width: 50%;}
 	.tilesmenu-menu .menu-item {width: 100%; height: auto;}
 	.location-menu .nav__drawer-btn, .location-menu .nav__back-btn {right: 50% !important;}
-
+	.location-menu #myemail {
+    	right: 70%;
+	}
+	.location-menu #timer {
+		right: 56%;
+	}
+	.location-menu #timer:before {
+	    display: none;
+	}
 }
-
 @media (max-height: 640px) {
 	.tilesmenu-menu .menu-header-inner.has-image img.menu-image {max-width: 70% !important;}
 }
@@ -515,17 +559,24 @@
 		border-bottom: 1px solid @white;
 	}
 	.location-menu .nav__drawer-btn {
-		margin-left:  ~"calc(100vw - 130px)" !important;
+		margin-left:  ~"calc(100vw - 140px)" !important;
     	position: relative;
     	right: inherit !important;
     	display: flex;
 	}
 	.location-menu .nav__back-btn {right: inherit !important; margin-right: 0px !important; position: absolute;}
+	.location-menu .resizingfont {margin-left: 56px;}
 
 	#wrapper .tilesmenu-menu .menu-item-inner:hover .menu-item-button+.page-level-progress-menu-item{
     	width:60px !important;
     	right: 24px;
     	transition:none !important;
+	}
+	.location-menu #myemail {
+		right: 340px;
+	}
+	.location-menu #timer {
+		right: 230px;
 	}
 
 	.tilesmenu-menu {
@@ -645,5 +696,13 @@
 				}
 			}
 		}
+	}
+}
+@media all and (max-width:@device-width-small) {
+	.location-menu #myemail {
+		right: inherit;
+	}
+	.location-menu #timer {
+		right: inherit;
 	}
 }
