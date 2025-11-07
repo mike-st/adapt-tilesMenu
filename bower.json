@@ -1,6 +1,6 @@
 {
   "name": "adapt-tilesMenu",
-  "version": "3.1.9",
+  "version": "3.2.0",
   "framework": ">=3.3",
   "homepage": "https://github.com/mike-st/adapt-tilesmenu",
   "displayName": "Scrolling Tiles Menu",
