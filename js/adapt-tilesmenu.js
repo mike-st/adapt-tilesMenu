@@ -77,6 +77,26 @@ define([
                 $('.tilesmenu-menu .menu-container-inner .menu-header .menu-header-inner .menu-body').addClass('submenu-body');
             }
 
+            var getUrlParameter = function getUrlParameter(sParam) { 
+                var sPageURL = decodeURIComponent(window.location.search.substring(1)),
+                sURLVariables = sPageURL.split('&'),
+                sParameterName,
+                i;
+                for (i = 0; i < sURLVariables.length; i++) { 
+                    sParameterName = sURLVariables[i].split('='); 
+                    if (sParameterName[0] === sParam) {
+                        return sParameterName[1] === undefined ? true : sParameterName[1];
+                    }
+                };
+            };
+            var menulaunch = getUrlParameter('menulaunch');
+            
+            if(!menulaunch == ''){
+                $('html#adapt').addClass('menulaunch');
+            } else {
+                //Don't launch to menu respect page 1 launch
+            }
+
             // Triggers Page 1 when Accessibility button is pressed
             var config = this.model.get("_tilesMenu");
             var launchPGone = config && config._gotoPageone;
@@ -88,6 +108,8 @@ define([
 
             if (launchPGone == true) {
                 console.log("TILE MENU PAGE 1 LAUNCH IS OFF.");
+            } else if ($('html#adapt').hasClass('menulaunch')) {
+                console.log("MENU LAUNCH URL PARAMETER USED");
             } else if (launchPGone == false || $('.location-menu').hasClass('accessibility')) {
                 this.listenToOnce(Adapt, "menuView:postRender pageView:postRender", this.navigateTo); 
             }
@@ -96,7 +118,9 @@ define([
 
         firstPGlaunch: function() {
             // Checks if you are on Main Menu or Sub Menu
-            if ($('.navigation-back-button').hasClass('display-none')) {
+            if ($('html#adapt').hasClass('menulaunch')) {
+                    console.log("MENU LAUNCH URL PARAMETER USED");
+            } else if ($('.navigation-back-button').hasClass('display-none')) {
                 $( '.firsttileview .nth-child-1 .origbutton .viewtext' ).trigger( 'click' );
             } else {
                 //Do Nothing on SUB Menu
@@ -105,7 +129,9 @@ define([
         },
 
         navigateTo: function() {
-            if( $('.navpagenum:empty').length ) {
+            if ($('html#adapt').hasClass('menulaunch')) {
+                    console.log("MENU LAUNCH URL PARAMETER USED");
+            } else if ( $('.navpagenum:empty').length ) {
                 window.setTimeout(function(){
                     console.log("1st view of TILE MENU.");
                     $( '.firsttileview .nth-child-1 .origbutton .viewtext' ).trigger( 'click' );
