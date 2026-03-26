@@ -117,28 +117,36 @@ define([
         },
 
         firstPGlaunch: function() {
-            // Checks if you are on Main Menu or Sub Menu
-            if ($('html#adapt').hasClass('menulaunch')) {
-                    console.log("MENU LAUNCH URL PARAMETER USED");
-            } else if ($('.navigation-back-button').hasClass('display-none')) {
-                $( '.firsttileview .nth-child-1 .origbutton .viewtext' ).trigger( 'click' );
+            if((Adapt.offlineStorage.get("bookmarkPG") === "undefined") || (Adapt.offlineStorage.get("bookmarkPG") === undefined) || (Adapt.offlineStorage.get("bookmarkPG") == "")){
+                // Checks if you are on Main Menu or Sub Menu
+                if ($('html#adapt').hasClass('menulaunch')) {
+                        console.log("MENU LAUNCH URL PARAMETER USED");
+                } else if ($('.navigation-back-button').hasClass('display-none')) {
+                    $( '.firsttileview .nth-child-1 .origbutton .viewtext' ).trigger( 'click' );
+                } else {
+                    //Do Nothing on SUB Menu
+                    $('.tiles-menu-inner').removeClass('firsttileview');
+                }
             } else {
-                //Do Nothing on SUB Menu
-                $('.tiles-menu-inner').removeClass('firsttileview');
+                //Do nothing
             }
         },
 
         navigateTo: function() {
-            if ($('html#adapt').hasClass('menulaunch')) {
-                    console.log("MENU LAUNCH URL PARAMETER USED");
-            } else if ( $('.navpagenum:empty').length ) {
-                window.setTimeout(function(){
-                    console.log("1st view of TILE MENU.");
-                    $( '.firsttileview .nth-child-1 .origbutton .viewtext' ).trigger( 'click' );
-                }, 555);
+            if((Adapt.offlineStorage.get("bookmarkPG") === "undefined") || (Adapt.offlineStorage.get("bookmarkPG") === undefined) || (Adapt.offlineStorage.get("bookmarkPG") == "")){
+                if ($('html#adapt').hasClass('menulaunch')) {
+                        console.log("MENU LAUNCH URL PARAMETER USED");
+                } else if ( $('.navpagenum:empty').length ) {
+                    window.setTimeout(function(){
+                        console.log("1st view of TILE MENU.");
+                        $( '.firsttileview .nth-child-1 .origbutton .viewtext' ).trigger( 'click' );
+                    }, 555);
+                } else {
+                    $('.tiles-menu-inner').removeClass('firsttileview');
+                    console.log("TILE MENU has been viewed before.");
+                }
             } else {
-                $('.tiles-menu-inner').removeClass('firsttileview');
-                console.log("TILE MENU has been viewed before.");
+                //Do nothing
             } 
         },
 
